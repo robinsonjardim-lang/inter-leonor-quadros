@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interclasse Leonor Quadros 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+    <header class="hero">
+
+        <nav class="nav-container">
+
+            <div class="logo">
+
+                <img src="IMG_7333.jpeg" alt="Logotipo Escola Leonor Quadros" class="logo-img" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;">
+
+            </div>
+
+            <ul class="nav-menu">
+
+                <li><a href="#ao-vivo">Ao Vivo</a></li>
+
+                <li><a href="#cadastro">Inscrição</a></li>
+
+                <li><a href="#chaveamento">Chaveamento</a></li>
+
+                <li><a href="#classificacao">Placar</a></li>
+
+                <li><a href="#mvp">MVP</a></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="hero-content">
+
+            <h1>Jogos Interclasse 2026</h1>
+
+            <p>Acompanhe as partidas ao vivo, apoie sua turma e mostre a força da sua sala!</p>
+
+            <a href="#cadastro" class="btn">Inscrever Atleta</a>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+
+   
+
+ 
+
+        <!-- Seção Ao Vivo -->
+
+        <section id="ao-vivo" class="container">
+
+            <h2>Transmissão Ao Vivo</h2>
+
+            <div class="video-wrapper">
+
+                <iframe src="https://meet.google.com/xxy-qkgy-oat" frameborder="0" allowfullscreen></iframe>
+
+            </div>
+
+            <div class="status-live">
+
+                <span class="dot"></span> Transmitindo agora: <strong>Quadra Principal</strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Seção Cadastro -->
+
+        <section id="cadastro" class="container bg-alt">
+
+            <div class="form-wrapper">
+
+                <h2>Cadastro de Atleta</h2>
+
+                <form id="form-cadastro">
+
+                    <div class="form-group">
+
+                        <label for="nome">Nome Completo:</label>
+
+                        <input type="text" id="nome" required placeholder="Ex: João Silva">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="turma">Série / Turma:</label>
+
+                        <input type="text" id="turma" required placeholder="Ex: 3º Ano A">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="modalidade">Modalidade:</label>
+
+                        <select id="modalidade">
+
+                            <option value="Futsal Masculino">Futsal Masculino</option>
+
+                            <option value="Futsal Feminino">Futsal Feminino</option>
+
+                            <option value="Vôlei Misto">Vôlei Misto</option>
+
+                            <option value="Basquete">Basquete</option>
+
+                            <option value="E-Sports">E-Sports</option>
+
+                        </select>
+
+                    </div>
+
+                    <button type="submit" class="btn-submit">Finalizar Inscrição</button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+    <!-- Tabela Atletas Inscritos -->
+<section id="lista-inscritos" class="container">
+    <h2>Atletas Cadastrados</h2>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Turma</th>
+                    <th>Modalidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-alunos">
+                <!-- Preenchido via JS -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+        <!-- Chaveamento do Torneio -->
+
+        <!-- Chaveamento do Torneio -->
+
+        <section id="chaveamento" class="container bg-alt">
+
+            <h2>Chaveamento Oficial do Torneio</h2>
+
+            <p class="section-subtitle">Confira o quadro oficial de partidas do Interclasse Leonor Quadros 2026!</p>
+
+           
+
+            <!-- Imagem do Chaveamento Reduzida e Centralizada -->
+
+            <div class="chaveamento-img-wrapper">
+
+                <img src="chaveamento.jpg"
+
+                     onerror="this.onerror=null; this.src='img/chaveamento.jpg';"
+
+                     alt="Chaveamento Oficial Interclasse Leonor Quadros 2026"
+
+                     class="chaveamento-img">
+
+            </div>
+
+
+
+            <!-- Detalhamento em formato de lista -->
+
+            <h3 class="subtitulo-detalhes">Detalhamento das Próximas Rodadas</h3>
+
+            <div class="bracket-container">
+
+                <div class="bracket-round">
+
+                    <h3>Quartas de Final</h3>
+
+                    <div class="match">
+
+                        <div class="team winner">9º Ano A <span class="score">3</span></div>
+
+                        <div class="team">1º Ano B <span class="score">2</span></div>
+
+                        <span class="match-info">Jogo 1 - Concluído</span>
+
+                    </div>
+
+                    <div class="match">
+
+                        <div class="team winner">1º Ano C <span class="score">1</span></div>
+
+                        <div class="team">2º Ano D <span class="score">0</span></div>
+
+                        <span class="match-info">Jogo 2 - Concluído</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="bracket-round">
+
+                    <h3>Semifinais</h3>
+
+                    <div class="match">
+
+                        <div class="team winner">9º Ano A <span class="score">3</span></div>
+
+                        <div class="team">1º Ano B <span class="score">2</span></div>
+
+                        <span class="match-info">Semi 1 - Concluído</span>
+
+                    </div>
+
+                    <div class="match">
+
+                        <div class="team winner">3º Ano A <span class="score">4</span></div>
+
+                        <div class="team">2º Ano D <span class="score">0</span></div>
+
+                        <span class="match-info">Semi 2 - Concluído</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="bracket-round final-round">
+
+                    <h3>🏆 Grande Final (27 Outubro)</h3>
+
+                    <div class="match final">
+
+                        <div class="team winner">9º Ano A</div>
+
+                        <div class="team winner">3º Ano A</div>
+
+                        <span class="match-info">15h00 | Ginásio Principal</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Tabela de Classificação -->
+
+        <section id="classificacao" class="container">
+
+            <h2>Tabela de Classificação</h2>
+
+            <div class="table-responsive">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Posição</th>
+
+                            <th>Turma</th>
+
+                            <th>Pontos</th>
+
+                            <th>Vitórias</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>1º 🥇</td>
+
+                            <td>3º Ano A</td>
+
+                            <td>12 pts</td>
+
+                            <td>4</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>2º 🥈</td>
+
+                            <td>9º Ano A</td>
+
+                            <td>9 pts</td>
+
+                            <td>3</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>3º 🥉</td>
+
+                            <td>1º Ano C</td>
+
+                            <td>6 pts</td>
+
+                            <td>2</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Votação MVP -->
+
+        <section id="mvp" class="container bg-alt">
+
+            <h2>Votação: Melhor Jogador (MVP)</h2>
+
+            <p class="section-subtitle">Todos os atletas cadastrados concorrem ao prêmio de destaque!</p>
+
+            <div class="grid-cards" id="cards-mvp">
+
+                <!-- Cards inseridos dinamicamente via JS -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        <p>&copy; 2026 Escola Leonor Quadros - Jogos Escolares</p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html> 
+

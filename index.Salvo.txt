@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interclasse Leonor Quadros 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+    <header class="hero">
+
+        <nav class="nav-container">
+
+            <div class="logo">
+
+                <img src="IMG_7333.jpeg" alt="Logotipo Escola Leonor Quadros" class="logo-img" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;">
+
+            </div>
+
+            <ul class="nav-menu">
+
+                <li><a href="#ao-vivo">Ao Vivo</a></li>
+
+                <li><a href="#cadastro">Inscrição</a></li>
+
+                <li><a href="#chaveamento">Chaveamento</a></li>
+
+                <li><a href="#classificacao">Placar</a></li>
+
+                <li><a href="#mvp">MVP</a></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="hero-content">
+
+            <h1>Jogos Interclasse 2026</h1>
+
+            <p>Acompanhe as partidas ao vivo, apoie sua turma e mostre a força da sua sala!</p>
+
+            <a href="#cadastro" class="btn">Inscrever Atleta</a>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+
+   
+
+ 
+
+        <!-- Seção Ao Vivo -->
+
+        <section id="ao-vivo" class="container">
+
+            <h2>Transmissão Ao Vivo</h2>
+
+            <div class="video-wrapper">
+
+                <iframe src="https://seu-servidor.com/live/stream.m3u8" frameborder="0" allowfullscreen></iframe>
+
+            </div>
+
+            <div class="status-live">
+
+                <span class="dot"></span> Transmitindo agora: <strong>Quadra Principal</strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Seção Cadastro -->
+
+        <section id="cadastro" class="container bg-alt">
+
+            <div class="form-wrapper">
+
+                <h2>Cadastro de Atleta</h2>
+
+                <form id="form-cadastro">
+
+                    <div class="form-group">
+
+                        <label for="nome">Nome Completo:</label>
+
+                        <input type="text" id="nome" required placeholder="Ex: João Silva">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="turma">Série / Turma:</label>
+
+                        <input type="text" id="turma" required placeholder="Ex: 3º Ano A">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="modalidade">Modalidade:</label>
+
+                        <select id="modalidade">
+
+                            <option value="Futsal Masculino">Futsal Masculino</option>
+
+                            <option value="Futsal Feminino">Futsal Feminino</option>
+
+                            <option value="Vôlei Misto">Vôlei Misto</option>
+
+                            <option value="Basquete">Basquete</option>
+
+                            <option value="E-Sports">E-Sports</option>
+
+                        </select>
+
+                    </div>
+
+                    <button type="submit" class="btn-submit">Finalizar Inscrição</button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+    <!-- Tabela Atletas Inscritos -->
+<section id="lista-inscritos" class="container">
+    <h2>Atletas Cadastrados</h2>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Turma</th>
+                    <th>Modalidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-alunos">
+                <!-- Preenchido via JS -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+        <!-- Chaveamento do Torneio -->
+
+        <!-- Chaveamento do Torneio -->
+
+        <section id="chaveamento" class="container bg-alt">
+
+            <h2>Chaveamento Oficial do Torneio</h2>
+
+            <p class="section-subtitle">Confira o quadro oficial de partidas do Interclasse Leonor Quadros 2026!</p>
+
+           
+
+            <!-- Imagem do Chaveamento Reduzida e Centralizada -->
+
+            <div class="chaveamento-img-wrapper">
+
+                <img src="chaveamento.jpg"
+
+                     onerror="this.onerror=null; this.src='img/chaveamento.jpg';"
+
+                     alt="Chaveamento Oficial Interclasse Leonor Quadros 2026"
+
+                     class="chaveamento-img">
+
+            </div>
+
+
+
+            <!-- Detalhamento em formato de lista -->
+
+            <h3 class="subtitulo-detalhes">Detalhamento das Próximas Rodadas</h3>
+
+            <div class="bracket-container">
+
+                <div class="bracket-round">
+
+                    <h3>Quartas de Final</h3>
+
+                    <div class="match">
+
+                        <div class="team winner">9º Ano A <span class="score">3</span></div>
+
+                        <div class="team">1º Ano B <span class="score">2</span></div>
+
+                        <span class="match-info">Jogo 1 - Concluído</span>
+
+                    </div>
+
+                    <div class="match">
+
+                        <div class="team winner">1º Ano C <span class="score">1</span></div>
+
+                        <div class="team">2º Ano D <span class="score">0</span></div>
+
+                        <span class="match-info">Jogo 2 - Concluído</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="bracket-round">
+
+                    <h3>Semifinais</h3>
+
+                    <div class="match">
+
+                        <div class="team winner">9º Ano A <span class="score">3</span></div>
+
+                        <div class="team">1º Ano B <span class="score">2</span></div>
+
+                        <span class="match-info">Semi 1 - Concluído</span>
+
+                    </div>
+
+                    <div class="match">
+
+                        <div class="team winner">3º Ano A <span class="score">4</span></div>
+
+                        <div class="team">2º Ano D <span class="score">0</span></div>
+
+                        <span class="match-info">Semi 2 - Concluído</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="bracket-round final-round">
+
+                    <h3>🏆 Grande Final (27 Outubro)</h3>
+
+                    <div class="match final">
+
+                        <div class="team winner">9º Ano A</div>
+
+                        <div class="team winner">3º Ano A</div>
+
+                        <span class="match-info">15h00 | Ginásio Principal</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Tabela de Classificação -->
+
+        <section id="classificacao" class="container">
+
+            <h2>Tabela de Classificação</h2>
+
+            <div class="table-responsive">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Posição</th>
+
+                            <th>Turma</th>
+
+                            <th>Pontos</th>
+
+                            <th>Vitórias</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>1º 🥇</td>
+
+                            <td>3º Ano A</td>
+
+                            <td>12 pts</td>
+
+                            <td>4</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>2º 🥈</td>
+
+                            <td>9º Ano A</td>
+
+                            <td>9 pts</td>
+
+                            <td>3</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>3º 🥉</td>
+
+                            <td>1º Ano C</td>
+
+                            <td>6 pts</td>
+
+                            <td>2</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Votação MVP -->
+
+        <section id="mvp" class="container bg-alt">
+
+            <h2>Votação: Melhor Jogador (MVP)</h2>
+
+            <p class="section-subtitle">Todos os atletas cadastrados concorrem ao prêmio de destaque!</p>
+
+            <div class="grid-cards" id="cards-mvp">
+
+                <!-- Cards inseridos dinamicamente via JS -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        <p>&copy; 2026 Escola Leonor Quadros - Jogos Escolares</p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html> 
+
+
+CSS:
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* Header & Navegação Proporcional */
+header.hero {
+    background: linear-gradient(rgba(53, 77, 134, 0.75), rgba(53, 80, 142, 0.9)), 
+                url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 8%;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    max-width: 120px;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #38bdf8;
+}
+
+.hero-content {
+    max-width: 650px;
+    margin: 40px 0 60px 0;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #38bdf8;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+}
+
+.btn {
+    display: inline-block;
+    background: #0284c7;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0369a1;
+}
+
+/* Estrutura dos Containers */
+.container {
+    padding: 60px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-alt {
+    background-color: #1e293b;
+    border-radius: 12px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+/* Transmissão Ao Vivo (Vídeo 16:9 Responsivo) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    background-color: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.status-live {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Formulário de Cadastro Centralizado */
+.form-wrapper {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+#form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+input, select {
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #38bdf8;
+}
+
+.btn-submit {
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #16a34a;
+}
+
+/* Tabelas */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e293b;
+    min-width: 480px;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    background-color: #0f172a;
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #334155;
+}
+
+/* Chaveamento do Torneio (Bracket) */
+.bracket-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.bracket-round {
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bracket-round h3 {
+    font-size: 1.1rem;
+    color: #38bdf8;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.match {
+    background: #0f172a;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    background: #1e293b;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.team.winner {
+    border-left: 4px solid #22c55e;
+    font-weight: bold;
+}
+
+.team.placeholder {
+    color: #64748b;
+    font-style: italic;
+}
+
+.score {
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.match-info {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: right;
+    margin-top: 4px;
+}
+
+/* Card Votação MVP */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card.votado {
+    border: 2px solid #22c55e;
+    background-color: #0d2818;
+}
+
+.votos-count {
+    margin: 12px 0;
+    font-size: 0.95rem;
+    color: #38bdf8;
+}
+
+.btn-small {
+    width: 100%;
+    background-color: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-small:hover {
+    background-color: #0284c7;
+    color: #fff;
+}
+
+.btn-votado {
+    background-color: #22c55e !important;
+    color: #ffffff !important;
+    cursor: default;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+    color: #64748b;
+    margin-top: 40px;
+}
+
+/* Media Queries (Responsividade Celular) */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .container {
+        padding: 40px 5%;
+    }
+}
+
+.chaveamento-img-wrapper {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+    border-radius: 17px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #334155;
+    background-color: #0f172a;
+}
+
+.chaveamento-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.chaveamento-img:hover {
+    transform: scale(1.01);
+}
+
+.subtitulo-detalhes {
+    font-size: 1.3rem;
+    color: #f8fafc;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 4px solid #38bdf8;
+    padding-left: 10px;
+}
+
+.logo-img {
+    width: 120px;          /* Aumenta a largura do logo (ajuste conforme preferência) */
+    height: 120px;         /* Define a altura igual à largura para manter a proporção */
+    object-fit: cover;     /* Garante que a imagem preencha o círculo sem distorcer */
+    border-radius: 50%;    /* Arredonda completamente a imagem, transformando-a num círculo */
+    border: 3px solid #fff;/* Opcional: adiciona uma borda branca elegante ao redor do logo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: cria um efeito de destaque/sombra */
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ==========================================
+   CORREÇÃO DOS CARDS DE VOTAÇÃO MVP
+========================================== */
+
+.mvp-card .card-content {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+}
+
+.mvp-card .card-content h3 {
+    color: #0f172a !important;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.mvp-card .card-content p {
+    color: #334155 !important;
+    margin: 6px 0;
+}
+
+.mvp-card .card-content strong {
+    color: #0f172a !important;
+}
+
+.mvp-card .card-content span {
+    color: #334155 !important;
+}
+
+.btn-votado {
+    background-color: #22c55e !important;
+    color: #2f0bb4 !important;
+    cursor: default;
+}
+
+/* ==========================================
+   CARD DE VOTAÇÃO MVP - NOVO VISUAL
+========================================== */
+
+.mvp-card {
+    width: 100%;
+}
+
+.mvp-card .card-content {
+    background: #d9fbe5 !important; /* Verde claro */
+    color: #1e293b !important;
+    border: 2px solid #22c55e;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Nome do atleta - Azul escuro */
+.mvp-card .card-content h3 {
+    color: #0f2d5c !important;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+/* Turma e Modalidade - Cinza escuro */
+.mvp-card .card-content p {
+    color: #374151 !important;
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+/* Destaque dos títulos */
+.mvp-card .card-content strong {
+    color: #1f2937 !important;
+}
+
+/* Botão de votação */
+.btn-votar-mvp {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-votar-mvp:hover {
+    background-color: #15803d !important;
+}
+
+/* Contador de votos */
+.votos-mvp {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #0f2d5c !important;
+}
+
+
+JavaScript:
+
+let indiceEdicao = null;
+let atletas = [];
+
+const formCadastro = document.getElementById('form-cadastro');
+const tabelaAlunos = document.getElementById('tabela-alunos');
+const inputNome = document.getElementById('nome');
+const inputTurma = document.getElementById('turma');
+const selectModalidade = document.getElementById('modalidade');
+const btnSubmit = document.querySelector('.btn-submit');
+const cardsMvpContainer = document.getElementById('cards-mvp');
+
+// Função para atualizar a tabela de atletas cadastrados
+function renderizarTabela() {
+    tabelaAlunos.innerHTML = '';
+    
+    atletas.forEach((atleta, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${atleta.nome}</td>
+            <td>${atleta.turma}</td>
+            <td>${atleta.modalidade}</td>
+            <td>
+                <button onclick="editarAtleta(${index})" style="background-color: #f39c12; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-right: 5px;">Editar</button>
+                <button onclick="excluirAtleta(${index})" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Excluir</button>
+            </td>
+        `;
+        tabelaAlunos.appendChild(tr);
+    });
+}
+
+// Função para atualizar os cards de votação do MVP na tela
+function renderizarMVP() {
+    cardsMvpContainer.innerHTML = '';
+
+    if (atletas.length === 0) {
+        cardsMvpContainer.innerHTML = `
+            <p class="section-subtitle">
+                Nenhum atleta cadastrado para votação no momento.
+            </p>
+        `;
+        return;
+    }
+
+    atletas.forEach((atleta, index) => {
+        const card = document.createElement('div');
+
+        card.classList.add('mvp-card');
+
+        card.innerHTML = `
+            <div class="card-content">
+
+                <h3>${atleta.nome}</h3>
+
+                <p>
+                    <strong>Turma:</strong>
+                    ${atleta.turma}
+                </p>
+
+                <p>
+                    <strong>Modalidade:</strong>
+                    ${atleta.modalidade}
+                </p>
+
+                <button 
+                    onclick="votarMVP(${index})"
+                    class="btn-votar-mvp"
+                >
+                    ⭐ Votar no MVP
+                </button>
+
+                <span id="votos-${index}" class="votos-mvp">
+                    Votos: ${atleta.votos || 0}
+                </span>
+
+            </div>
+        `;
+
+        cardsMvpContainer.appendChild(card);
+    });
+}
+
+
+// Evento do formulário de cadastro ou salvamento de edição
+formCadastro.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nome = inputNome.value;
+    const turma = inputTurma.value;
+    const modalidade = selectModalidade.value;
+
+    if (indiceEdicao !== null) {
+        // Mantém a quantidade de votos anterior ao editar o atleta
+        const votosAtuais = atletas[indiceEdicao].votos || 0;
+        atletas[indiceEdicao] = { nome, turma, modalidade, votos: votosAtuais };
+        indiceEdicao = null;
+        btnSubmit.textContent = "Finalizar Inscrição";
+    } else {
+        atletas.push({ nome, turma, modalidade, votos: 0 });
+    }
+
+    formCadastro.reset();
+    renderizarTabela();
+    renderizarMVP();
+});
+
+// Ação de carregar dados para edição
+window.editarAtleta = function(index) {
+    const atleta = atletas[index];
+    
+    inputNome.value = atleta.nome;
+    inputTurma.value = atleta.turma;
+    selectModalidade.value = atleta.modalidade; // Carrega a modalidade correta no select
+
+    indiceEdicao = index;
+    btnSubmit.textContent = "Salvar Alterações";
+
+    document.getElementById('cadastro').scrollIntoView({ behavior: 'smooth' });
+};
+
+// Ação de excluir atleta
+window.excluirAtleta = function(index) {
+    if (confirm("Tem certeza que deseja excluir este atleta?")) {
+        atletas.splice(index, 1);
+        if (indiceEdicao === index) {
+            formCadastro.reset();
+            indiceEdicao = null;
+            btnSubmit.textContent = "Finalizar Inscrição";
+        }
+        renderizarTabela();
+        renderizarMVP();
+    }
+};
+
+// Ação de computar voto no MVP
+window.votarMVP = function(index) {
+    if (!atletas[index].votos) {
+        atletas[index].votos = 0;
+    }
+    atletas[index].votos++;
+
+    const spanVotos = document.getElementById(`votos-${index}`);
+    if (spanVotos) {
+        spanVotos.textContent = `Votos: ${atletas[index].votos}`;
+    }
+};
+
+// Inicializa a tela vazia
+renderizarMVP();

@@ -1,0 +1,544 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* Header & Navegação Proporcional */
+header.hero {
+    background: linear-gradient(rgba(53, 77, 134, 0.75), rgba(53, 80, 142, 0.9)), 
+                url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 8%;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    max-width: 120px;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #38bdf8;
+}
+
+.hero-content {
+    max-width: 650px;
+    margin: 40px 0 60px 0;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #38bdf8;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+}
+
+.btn {
+    display: inline-block;
+    background: #0284c7;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0369a1;
+}
+
+/* Estrutura dos Containers */
+.container {
+    padding: 60px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-alt {
+    background-color: #1e293b;
+    border-radius: 12px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+/* Transmissão Ao Vivo (Vídeo 16:9 Responsivo) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    background-color: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.status-live {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Formulário de Cadastro Centralizado */
+.form-wrapper {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+#form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+input, select {
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #38bdf8;
+}
+
+.btn-submit {
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #16a34a;
+}
+
+/* Tabelas */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e293b;
+    min-width: 480px;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    background-color: #0f172a;
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #334155;
+}
+
+/* Chaveamento do Torneio (Bracket) */
+.bracket-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.bracket-round {
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bracket-round h3 {
+    font-size: 1.1rem;
+    color: #38bdf8;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.match {
+    background: #0f172a;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    background: #1e293b;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.team.winner {
+    border-left: 4px solid #22c55e;
+    font-weight: bold;
+}
+
+.team.placeholder {
+    color: #64748b;
+    font-style: italic;
+}
+
+.score {
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.match-info {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: right;
+    margin-top: 4px;
+}
+
+/* Card Votação MVP */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card.votado {
+    border: 2px solid #22c55e;
+    background-color: #0d2818;
+}
+
+.votos-count {
+    margin: 12px 0;
+    font-size: 0.95rem;
+    color: #38bdf8;
+}
+
+.btn-small {
+    width: 100%;
+    background-color: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-small:hover {
+    background-color: #0284c7;
+    color: #fff;
+}
+
+.btn-votado {
+    background-color: #22c55e !important;
+    color: #ffffff !important;
+    cursor: default;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+    color: #64748b;
+    margin-top: 40px;
+}
+
+/* Media Queries (Responsividade Celular) */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .container {
+        padding: 40px 5%;
+    }
+}
+
+.chaveamento-img-wrapper {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+    border-radius: 17px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #334155;
+    background-color: #0f172a;
+}
+
+.chaveamento-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.chaveamento-img:hover {
+    transform: scale(1.01);
+}
+
+.subtitulo-detalhes {
+    font-size: 1.3rem;
+    color: #f8fafc;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 4px solid #38bdf8;
+    padding-left: 10px;
+}
+
+.logo-img {
+    width: 120px;          /* Aumenta a largura do logo (ajuste conforme preferência) */
+    height: 120px;         /* Define a altura igual à largura para manter a proporção */
+    object-fit: cover;     /* Garante que a imagem preencha o círculo sem distorcer */
+    border-radius: 50%;    /* Arredonda completamente a imagem, transformando-a num círculo */
+    border: 3px solid #fff;/* Opcional: adiciona uma borda branca elegante ao redor do logo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: cria um efeito de destaque/sombra */
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ==========================================
+   CORREÇÃO DOS CARDS DE VOTAÇÃO MVP
+========================================== */
+
+.mvp-card .card-content {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+}
+
+.mvp-card .card-content h3 {
+    color: #0f172a !important;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.mvp-card .card-content p {
+    color: #334155 !important;
+    margin: 6px 0;
+}
+
+.mvp-card .card-content strong {
+    color: #0f172a !important;
+}
+
+.mvp-card .card-content span {
+    color: #334155 !important;
+}
+
+.btn-votado {
+    background-color: #22c55e !important;
+    color: #2f0bb4 !important;
+    cursor: default;
+}
+
+/* ==========================================
+   CARD DE VOTAÇÃO MVP - NOVO VISUAL
+========================================== */
+
+.mvp-card {
+    width: 100%;
+}
+
+.mvp-card .card-content {
+    background: #d9fbe5 !important; /* Verde claro */
+    color: #1e293b !important;
+    border: 2px solid #22c55e;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Nome do atleta - Azul escuro */
+.mvp-card .card-content h3 {
+    color: #0f2d5c !important;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+/* Turma e Modalidade - Cinza escuro */
+.mvp-card .card-content p {
+    color: #374151 !important;
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+/* Destaque dos títulos */
+.mvp-card .card-content strong {
+    color: #1f2937 !important;
+}
+
+/* Botão de votação */
+.btn-votar-mvp {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-votar-mvp:hover {
+    background-color: #15803d !important;
+}
+
+/* Contador de votos */
+.votos-mvp {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #0f2d5c !important;
+}
