@@ -168,4 +168,26 @@ window.votarMVP = async function(id) {
         console.error("Erro ao votar:", error);
         alert("Erro ao registrar seu voto. Tente novamente.");
     }
-};
+}
+
+// Exemplo de envio correto no JS do site:
+async function enviarParaPlanilha(dados) {
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyHkbq7BGAGnaTewctDAGDkD5OZZykpXt-v-a22a-vUP63EkVcJm5FLfizNffxPwUNdIg/exec";
+
+  try {
+    const response = await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors", // Evita bloqueio de CORS do Google Apps Script
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(dados).toString()
+    });
+    
+    console.log("Dados enviados com sucesso!");
+    alert("Inscrição realizada com sucesso!");
+  } catch (error) {
+    console.error("Erro ao enviar para a planilha:", error);
+    alert("Erro ao enviar dados. Tente novamente.");
+  }
+}
