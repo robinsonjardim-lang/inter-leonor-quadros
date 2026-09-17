@@ -50,10 +50,6 @@
         .gradient-hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #14532d 100%);
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
         .pulse-live {
             box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
             animation: pulse-red 1.8s infinite;
@@ -91,856 +87,989 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col justify-between antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- HEADER & NAVBAR -->
-    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-500 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300 bg-slate-800 flex items-center justify-center">
-                        <img src="logoLeonor.jpeg" alt="Logotipo Escola Leonor Quadros" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/120x120/16a34a/ffffff?text=LQ+2026';">
-                    </div>
-                    <div>
-                        <span class="font-display font-bold text-lg sm:text-xl text-white block leading-tight">Interclasse 2026</span>
-                        <span class="text-xs text-brand-500 font-medium">E.E. Leonor Quadros</span>
-                    </div>
-                </a>
-
-                <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium text-sm">
-                    <a href="#ao-vivo" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-circle-play text-red-500 mr-1.5"></i> Ao Vivo</a>
-                    <a href="#cadastro" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-user-plus text-brand-500 mr-1.5"></i> Inscrição</a>
-                    <a href="#chaveamento" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-sitemap text-amber-400 mr-1.5"></i> Chaveamento</a>
-                    <a href="#classificacao" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-trophy text-yellow-500 mr-1.5"></i> Placar</a>
-                    <a href="#mvp" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-star text-purple-400 mr-1.5"></i> Votação MVP</a>
-                </nav>
-
-                <!-- Actions -->
-                <div class="flex items-center gap-2">
-                    <button id="btn-open-gas-modal" onclick="openGasModal()" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 border border-slate-700 transition">
-                        <i class="fa-solid fa-code text-brand-500"></i> Code Apps Script
-                    </button>
-                    <a href="#cadastro" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg shadow-brand-600/30 transition transform hover:-translate-y-0.5 active:translate-y-0">
-                        Inscrever-se
-                    </a>
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
+<header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-500 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+                    <img src="logoLeonor.jpeg" alt="Logotipo Escola Leonor Quadros" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/120x120/16a34a/ffffff?text=LQ+2026';">
                 </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Nav -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800/95 border-b border-slate-700 px-4 pt-2 pb-4 space-y-1 text-sm font-medium">
-            <a href="#ao-vivo" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-circle-play text-red-500 mr-2"></i> Ao Vivo</a>
-            <a href="#cadastro" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-user-plus text-brand-500 mr-2"></i> Inscrição</a>
-            <a href="#chaveamento" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-sitemap text-amber-400 mr-2"></i> Chaveamento</a>
-            <a href="#classificacao" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-trophy text-yellow-500 mr-2"></i> Placar</a>
-            <a href="#mvp" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-star text-purple-400 mr-2"></i> Votação MVP</a>
-            <button onclick="openGasModal(); toggleMobileMenu();" class="w-full text-left px-3 py-2.5 rounded-lg text-brand-400 hover:bg-slate-700">
-                <i class="fa-solid fa-code mr-2"></i> Ver Código Apps Script Planilha
-            </button>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="gradient-hero py-16 lg:py-24 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6">
-                <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span> Edição Oficial 2026
-            </span>
-            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                Jogos Interclasse & <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-emerald-300 to-yellow-400">Projetos E.E. Leonor Quadros</span>
-            </h1>
-            <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
-                Acompanhe os jogos ao vivo, inscreva-se nos torneios esportivos e feiras culturais, e vote no **MVP de Futsal Masculino**!
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#cadastro" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-base shadow-xl shadow-brand-600/30 transition transform hover:-translate-y-1">
-                    <i class="fa-solid fa-pen-to-square mr-2"></i> Realizar Inscrição
-                </a>
-                <a href="#mvp" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-base transition transform hover:-translate-y-1">
-                    <i class="fa-solid fa-fire text-amber-400 mr-2"></i> Votação MVP (Futsal)
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <main class="flex-grow space-y-16 py-12">
-
-        <!-- SEÇÃO AO VIVO -->
-        <section id="ao-vivo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
-            <div class="bg-slate-800/80 rounded-2xl border border-slate-700 p-6 shadow-2xl">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                    <div>
-                        <div class="flex items-center gap-3">
-                            <h2 class="font-display text-2xl font-bold text-white">Transmissão Ao Vivo</h2>
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold border border-red-500/30">
-                                <span class="w-2 h-2 rounded-full bg-red-500 pulse-live"></span> AO VIVO
-                            </span>
-                        </div>
-                        <p class="text-slate-400 text-sm mt-1">Quadra Principal - Escola Leonor Quadros</p>
-                    </div>
-                    <div class="text-xs text-slate-400 bg-slate-900/60 px-3 py-2 rounded-lg border border-slate-700 inline-flex items-center gap-2 self-start md:self-auto">
-                        <i class="fa-solid fa-video text-brand-400"></i> Google Meet Transmissão Integrada
-                    </div>
+                <div>
+                    <span class="font-display font-bold text-lg sm:text-xl text-white block leading-tight">Interclasse 2026</span>
+                    <span class="text-xs text-brand-500 font-medium">E.E. Leonor Quadros</span>
                 </div>
+            </a>
 
-                <!-- Video Frame -->
-                <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-700/80 shadow-inner group">
-                    <iframe src="https://meet.google.com/xxy-qkgy-oat" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium text-sm">
+                <a href="#ao-vivo" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-circle-play text-red-500 mr-1.5"></i> Ao Vivo</a>
+                <a href="https://forms.gle/hL79gAXhuLc9rq5x9" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-user-plus text-brand-500 mr-1.5"></i> Cadastro Atividades</a>
+                <a href="#chaveamento" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-sitemap text-amber-400 mr-1.5"></i> Chaveamento</a>
+                <a href="#classificacao" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-trophy text-yellow-500 mr-1.5"></i> Placar</a>
+                <a href="#mvp" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-star text-purple-400 mr-1.5"></i> Votação MVP</a>
+            </nav>
 
-                <div class="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2 pt-2 border-t border-slate-700/50">
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle text-emerald-500 text-[10px]"></i> Sinal de alta definição estático ativado</span>
-                    <a href="https://meet.google.com/xxy-qkgy-oat" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:text-brand-300 font-semibold inline-flex items-center gap-1 hover:underline">
-                        Abrir transmissão em tela cheia <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO CADASTRO / INSCRIÇÃO -->
-        <section id="cadastro" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Formulário de Inscrição -->
-                <div class="lg:col-span-7 bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-bl-full pointer-events-none"></div>
-
-                    <div class="mb-6">
-                        <span class="text-brand-400 font-semibold text-xs uppercase tracking-wider">Inscrição de Aluno</span>
-                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Cadastro de Atleta & Projetos</h2>
-                        <p class="text-slate-400 text-sm mt-1">Preencha os campos abaixo para participar do Interclasse ou das Atividades Recreativas e Culturais.</p>
-                    </div>
-
-                    <!-- App Script Config Connection Banner -->
-                    <div id="gas-status-banner" class="mb-6 p-3 rounded-xl bg-slate-900/80 border border-slate-700 text-xs flex items-center justify-between gap-3 text-slate-300">
-                        <div class="flex items-center gap-2">
-                            <span id="gas-status-dot" class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                            <span id="gas-status-text">Status Integração Google Sheets: Modo Local/Simulação</span>
-                        </div>
-                        <button onclick="configureSheetUrl()" class="text-brand-400 hover:underline font-semibold shrink-0">
-                            Configurar WebApp URL
-                        </button>
-                    </div>
-
-                    <form id="form-cadastro" class="space-y-5" onsubmit="handleFormSubmit(event)">
-                        <!-- CAMPO 1: Nome Completo -->
-                        <div>
-                            <label for="nome" class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">
-                                Nome Completo <span class="text-red-400">*</span>
-                            </label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                                    <i class="fa-solid fa-user"></i>
-                                </div>
-                                <input type="text" id="nome" required placeholder="Ex: João Silva" class="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition">
-                            </div>
-                        </div>
-
-                        <!-- CAMPO 2: Série / Turma -->
-                        <div>
-                            <label for="turma" class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">
-                                Série / Turma <span class="text-red-400">*</span>
-                            </label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                </div>
-                                <input type="text" id="turma" required placeholder="Ex: 3º Ano A" class="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition">
-                            </div>
-                        </div>
-
-                        <!-- CAMPO 3: Modalidade / Atividade -->
-                        <div>
-                            <label for="modalidade" class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">
-                                Modalidade / Atividade / Projeto <span class="text-red-400">*</span>
-                            </label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                                    <i class="fa-solid fa-list-check"></i>
-                                </div>
-                                <select id="modalidade" required class="w-full pl-10 pr-10 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm appearance-none transition">
-                                    <option value="" disabled selected>Selecione uma opção...</option>
-
-                                    <!-- Esportes do Interclasse -->
-                                    <optgroup label="🏆 Torneios Esportivos (Com Votação MVP no Futsal Masc.)" class="bg-slate-800 text-brand-400 font-bold">
-                                        <option value="Futsal Masculino" class="text-white">Futsal Masculino</option>
-                                        <option value="Futsal Feminino" class="text-white">Futsal Feminino</option>
-                                        <option value="Vôlei Misto" class="text-white">Vôlei Misto</option>
-                                        <option value="Basquete" class="text-white">Basquete</option>
-                                        <option value="E-Sports" class="text-white">E-Sports</option>
-                                    </optgroup>
-
-                                    <!-- Brincadeiras de Rua -->
-                                    <optgroup label="🎯 Recreação & Brincadeiras" class="bg-slate-800 text-amber-400 font-bold">
-                                        <option value="Brincadeiras de Rua & Atividades recreativas" class="text-white">Brincadeiras de Rua & Atividades recreativas</option>
-                                    </optgroup>
-
-                                    <!-- Eventos & Projetos Especiais da Escola -->
-                                    <optgroup label="🌟 Projetos & Eventos da Escola Leonor Quadros" class="bg-slate-800 text-purple-400 font-bold">
-                                        <option value="Inclusão" class="text-white">Inclusão</option>
-                                        <option value="Empreendedorismo Feira da Produtos" class="text-white">Empreendedorismo Feira da Produtos</option>
-                                        <option value="Beleza e Estetica" class="text-white">Beleza e Estetica</option>
-                                        <option value="Palestras Prof Silmara Sexologa" class="text-white">Palestras Prof Silmara Sexologa</option>
-                                        <option value="Shows de Talentos Musicais no Palco" class="text-white">Shows de Talentos Musicais no Palco</option>
-                                        <option value="Conciencia Negra & Afro-Brasileira" class="text-white">Conciencia Negra & Afro-Brasileira</option>
-                                        <option value="Primavera & Meio Ambiente" class="text-white">Primavera & Meio Ambiente</option>
-                                    </optgroup>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
-                                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                                </div>
-                            </div>
-                            <p class="text-[11px] text-slate-400 mt-1.5">
-                                <i class="fa-solid fa-circle-info text-amber-400 mr-1"></i> Apenas inscritos em <strong>Futsal Masculino</strong> concorrem à votação de MVP.
-                            </p>
-                        </div>
-
-                        <!-- Submeter -->
-                        <button type="submit" id="btn-submit-form" class="w-full py-3.5 px-6 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm shadow-lg shadow-brand-600/30 transition duration-200 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Finalizar Inscrição
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Tabela de Cadastrados em Tempo Real -->
-                <div class="lg:col-span-5 bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl flex flex-col h-full min-h-[480px]">
-                    <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <h3 class="font-display font-bold text-lg text-white">Inscritos Recentes</h3>
-                            <p class="text-xs text-slate-400">Lista em tempo real dos participantes</p>
-                        </div>
-                        <span id="total-inscritos-badge" class="px-2.5 py-1 rounded-full bg-slate-700 text-brand-400 text-xs font-bold border border-slate-600">
-                            0 Alunos
-                        </span>
-                    </div>
-
-                    <!-- Filtro por Modalidade -->
-                    <div class="mb-4">
-                        <select id="filtro-tabela-modalidade" onchange="renderizarTabelaInscritos()" class="w-full py-2 px-3 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-300 focus:outline-none">
-                            <option value="TODOS">Filtrar por: Todas as Modalidades/Eventos</option>
-                            <option value="Futsal Masculino">Apenas Futsal Masculino</option>
-                            <option value="Futsal Feminino">Apenas Futsal Feminino</option>
-                            <option value="Vôlei Misto">Apenas Vôlei Misto</option>
-                            <option value="Basquete">Apenas Basquete</option>
-                            <option value="E-Sports">Apenas E-Sports</option>
-                            <option value="PROJETOS">Apenas Projetos & Recreação</option>
-                        </select>
-                    </div>
-
-                    <!-- Lista com rolagem -->
-                    <div class="flex-grow overflow-y-auto max-h-[360px] pr-1 space-y-2.5" id="container-tabela-inscritos">
-                        <!-- Renderizado via JS -->
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SEÇÃO CHAVEAMENTO DO TORNEIO -->
-        <section id="chaveamento" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
-            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
-                <div class="text-center max-w-2xl mx-auto mb-8">
-                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Mata-Mata Oficial</span>
-                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Chaveamento do Torneio</h2>
-                    <p class="text-slate-400 text-sm mt-1">Quadro oficial de confrontos do Interclasse Leonor Quadros 2026</p>
-                </div>
-
-                <!-- Imagem/Banner Oficial do Chaveamento -->
-                <div class="mb-10 text-center">
-                    <div class="inline-block p-2 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl max-w-2xl w-full group overflow-hidden">
-                        <img src="chaveamento.jpg" 
-                             onerror="this.onerror=null; this.src='https://placehold.co/800x400/1e293b/22c55e?text=Chaveamento+Oficial+Interclasse+2026';" 
-                             alt="Chaveamento Oficial Interclasse Leonor Quadros 2026" 
-                             class="w-full h-auto rounded-xl object-cover transform group-hover:scale-[1.01] transition duration-300">
-                    </div>
-                </div>
-
-                <!-- Detalhamento em Bracket Interativo -->
-                <h3 class="font-display font-bold text-center text-lg text-white mb-6 border-b border-slate-700/60 pb-3">
-                    <i class="fa-solid fa-sitemap text-amber-400 mr-2"></i>Detalhamento por Etapas
-                </h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Quartas de Final -->
-                    <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700">
-                        <h4 class="text-xs font-bold uppercase text-brand-400 text-center mb-3 tracking-wider flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-bolt"></i> Quartas de Final
-                        </h4>
-                        <div class="space-y-3">
-                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
-                                <div class="flex justify-between items-center text-emerald-400 font-bold">
-                                    <span>9º Ano A</span>
-                                    <span class="bg-slate-900 px-2 py-0.5 rounded text-white">3</span>
-                                </div>
-                                <div class="flex justify-between items-center text-slate-400">
-                                    <span>1º Ano B</span>
-                                    <span class="bg-slate-900 px-2 py-0.5 rounded text-slate-400">2</span>
-                                </div>
-                                <div class="text-[10px] text-slate-500 pt-1 text-right italic">Jogo 1 - Concluído</div>
-                            </div>
-
-                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
-                                <div class="flex justify-between items-center text-emerald-400 font-bold">
-                                    <span>1º Ano C</span>
-                                    <span class="bg-slate-900 px-2 py-0.5 rounded text-white">1</span>
-                                </div>
-                                <div class="flex justify-between items-center text-slate-400">
-                                    <span>2º Ano D</span>
-                                    <span class="bg-slate-900 px-2 py-0.5 rounded text-slate-400">0</span>
-                                </div>
-                                <div class="text-[10px] text-slate-500 pt-1 text-right italic">Jogo 2 - Concluído</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Semifinais -->
-                    <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700">
-                        <h4 class="text-xs font-bold uppercase text-amber-400 text-center mb-3 tracking-wider flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-fire"></i> Semifinais
-                        </h4>
-                        <div class="space-y-3">
-                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
-                                <div class="flex justify-between items-center text-emerald-400 font-bold">
-                                    <span>9º Ano A</span>
-                                    <span class="bg-slate-900 px-2 py-0.5 rounded text-white">3</span>
-                                </div>
-                                <div class="flex justify-between items-center text-slate-400">
-                                    <span>1º Ano C</span>
-                                    <span class="bg-slate-900 px-2 py-0.5 rounded text-slate-400">2</span>
-                                </div>
-                                <div class="text-[10px] text-slate-500 pt-1 text-right italic">Semi 1 - Concluído</div>
-                            </div>
-
-                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
-                                <div class="flex justify-between items-center text-emerald-400 font-bold">
-                                    <span>3º Ano A</span>
-                                    <span class="bg-slate-900 px-2 py-0.5 rounded text-white">4</span>
-                                </div>
-                                <div class="flex justify-between items-center text-slate-400">
-                                    <span>2º Ano A</span>
-                                    <span class="bg-slate-900 px-2 py-0.5 rounded text-slate-400">0</span>
-                                </div>
-                                <div class="text-[10px] text-slate-500 pt-1 text-right italic">Semi 2 - Concluído</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Grande Final -->
-                    <div class="bg-slate-900/80 rounded-xl p-4 border-2 border-amber-500/40 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 font-extrabold text-[9px] px-2 py-0.5 rounded-bl">DECISÃO</div>
-                        <h4 class="text-xs font-bold uppercase text-yellow-400 text-center mb-3 tracking-wider flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-trophy"></i> Grande Final
-                        </h4>
-                        <div class="bg-slate-800/90 p-4 rounded-lg border border-amber-500/30 text-xs space-y-2">
-                            <div class="flex justify-between items-center text-white font-bold text-sm">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield text-brand-400"></i> 9º Ano A</span>
-                                <span class="text-amber-400 font-extrabold">VS</span>
-                            </div>
-                            <div class="flex justify-between items-center text-white font-bold text-sm">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield text-amber-400"></i> 3º Ano A</span>
-                                <span class="text-xs text-slate-400">A definir</span>
-                            </div>
-                            <div class="pt-2 border-t border-slate-700 text-[11px] text-amber-300 font-semibold text-center">
-                                <i class="fa-regular fa-calendar-check mr-1"></i> Sexta-feira | 15h00 - Ginásio
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO TABELA DE CLASSIFICAÇÃO -->
-        <section id="classificacao" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
-            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                    <div>
-                        <span class="text-yellow-400 text-xs font-bold uppercase tracking-wider">Pontuação Geral</span>
-                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Tabela de Classificação</h2>
-                    </div>
-                    <div class="text-xs text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-700 inline-block self-start sm:self-auto">
-                        <i class="fa-solid fa-rotate-right text-brand-400 mr-1"></i> Atualizado após cada rodada
-                    </div>
-                </div>
-
-                <!-- Tabela Responsiva -->
-                <div class="overflow-x-auto rounded-xl border border-slate-700">
-                    <table class="w-full text-left text-sm text-slate-300">
-                        <thead class="bg-slate-900 text-xs font-bold uppercase text-slate-400 border-b border-slate-700">
-                            <tr>
-                                <th scope="col" class="py-3.5 px-4 text-center">Posição</th>
-                                <th scope="col" class="py-3.5 px-4">Turma / Série</th>
-                                <th scope="col" class="py-3.5 px-4 text-center">Pontos</th>
-                                <th scope="col" class="py-3.5 px-4 text-center">Vitórias</th>
-                                <th scope="col" class="py-3.5 px-4 text-center">Saldos de Gols</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-700/60 bg-slate-800/50">
-                            <tr class="hover:bg-slate-700/40 transition">
-                                <td class="py-3.5 px-4 text-center font-bold text-yellow-400">1º 🥇</td>
-                                <td class="py-3.5 px-4 font-semibold text-white">3º Ano A</td>
-                                <td class="py-3.5 px-4 text-center font-extrabold text-brand-400">12 pts</td>
-                                <td class="py-3.5 px-4 text-center">4</td>
-                                <td class="py-3.5 px-4 text-center text-slate-300">+9</td>
-                            </tr>
-                            <tr class="hover:bg-slate-700/40 transition">
-                                <td class="py-3.5 px-4 text-center font-bold text-slate-300">2º 🥈</td>
-                                <td class="py-3.5 px-4 font-semibold text-white">9º Ano A</td>
-                                <td class="py-3.5 px-4 text-center font-extrabold text-brand-400">9 pts</td>
-                                <td class="py-3.5 px-4 text-center">3</td>
-                                <td class="py-3.5 px-4 text-center text-slate-300">+5</td>
-                            </tr>
-                            <tr class="hover:bg-slate-700/40 transition">
-                                <td class="py-3.5 px-4 text-center font-bold text-amber-600">3º 🥉</td>
-                                <td class="py-3.5 px-4 font-semibold text-white">1º Ano C</td>
-                                <td class="py-3.5 px-4 text-center font-extrabold text-brand-400">6 pts</td>
-                                <td class="py-3.5 px-4 text-center">2</td>
-                                <td class="py-3.5 px-4 text-center text-slate-300">+2</td>
-                            </tr>
-                            <tr class="hover:bg-slate-700/40 transition">
-                                <td class="py-3.5 px-4 text-center text-slate-400">4º</td>
-                                <td class="py-3.5 px-4 text-slate-200">2º Ano D</td>
-                                <td class="py-3.5 px-4 text-center font-bold text-slate-300">3 pts</td>
-                                <td class="py-3.5 px-4 text-center">1</td>
-                                <td class="py-3.5 px-4 text-center text-slate-400">-3</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO VOTAÇÃO MVP (EXCLUSIVA FUTSAL MASCULINO) -->
-        <section id="mvp" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
-            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl relative">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-bold uppercase">
-                                Votação Oficial
-                            </span>
-                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold uppercase">
-                                Futsal Masculino Apenas
-                            </span>
-                        </div>
-                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-2">Prêmio MVP - Melhor Jogador</h2>
-                        <p class="text-slate-400 text-sm mt-1">
-                            Apenas atletas cadastrados na modalidade <strong class="text-white">Futsal Masculino</strong> concorrem ao prêmio de Destaque do Torneio!
-                        </p>
-                    </div>
-
-                    <button onclick="carregarDadosInscritos()" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-700 border border-slate-700 text-xs text-brand-400 font-semibold transition inline-flex items-center gap-2 self-start md:self-auto">
-                        <i class="fa-solid fa-arrows-rotate"></i> Atualizar Votos
-                    </button>
-                </div>
-
-                <!-- Grid de Cards de Atletas de Futsal Masculino -->
-                <div id="cards-mvp" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    <!-- Cards renderizados dinamicamente via JS -->
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- MODAL INSTRUÇÕES E CÓDIGO GOOGLE APPS SCRIPT -->
-    <div id="gas-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
-            <div class="p-5 bg-slate-800 border-b border-slate-700 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-green-600/20 text-green-400 flex items-center justify-center border border-green-500/30">
-                        <i class="fa-solid fa-file-excel text-lg"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-display font-bold text-lg text-white">Código do Google Apps Script</h3>
-                        <p class="text-xs text-slate-400">Cole no seu projeto da planilha Google Sheets</p>
-                    </div>
-                </div>
-                <button onclick="closeGasModal()" class="text-slate-400 hover:text-white p-2 text-xl">
-                    <i class="fa-solid fa-xmark"></i>
+            <!-- Actions -->
+            <div class="flex items-center gap-2">
+                <button id="btn-open-gas-modal" onclick="openGasModal()" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 border border-slate-700 transition">
+                    <i class="fa-solid fa-code text-brand-500"></i> Code Apps Script
                 </button>
-            </div>
-
-            <div class="p-6 overflow-y-auto space-y-4 text-xs text-slate-300">
-                <p>Para conectar este site à sua Planilha do Google Sheets, siga as etapas:</p>
-                <ol class="list-decimal pl-5 space-y-1.5 text-slate-300">
-                    <li>Abra sua planilha no Google Sheets com as abas <strong class="text-white">Inscrições</strong>, <strong class="text-white">Futsal Masculino (MVP)</strong> e <strong class="text-white">Projetos & Eventos</strong>.</li>
-                    <li>Clique em <strong>Extensões</strong> &gt; <strong>Apps Script</strong>.</li>
-                    <li>Apague todo o código e cole o bloco abaixo:</li>
-                </ol>
-
-                <div class="relative group">
-                    <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-[11px] text-emerald-400 overflow-x-auto leading-relaxed select-all" id="code-gas-snippet">
-function doGet(e) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("Inscrições");
-  if (!sheet) {
-    return ContentService.createTextOutput(JSON.stringify([])).setMimeType(ContentService.MimeType.JSON);
-  }
-  var data = sheet.getDataRange().getValues();
-  var result = [];
-  
-  for (var i = 1; i < data.length; i++) {
-    if (data[i][1]) {
-      result.push({
-        id: data[i][1],
-        nome: data[i][2],
-        turma: data[i][3],
-        modalidade: data[i][4],
-        votos: Number(data[i][5] || 0)
-      });
-    }
-  }
-  return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
-}
-
-function doPost(e) {
-  var lock = LockService.getScriptLock();
-  lock.tryLock(10000);
-  try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheetInscricoes = ss.getSheetByName("Inscrições");
-    var params = JSON.parse(e.postData.contents);
-
-    if (params.action === "cadastrar") {
-      var id = "LQ-" + new Date().getTime();
-      sheetInscricoes.appendRow([
-        new Date(),
-        id,
-        params.nome,
-        params.turma,
-        params.modalidade,
-        0
-      ]);
-      return ContentService.createTextOutput(JSON.stringify({ status: "success", id: id })).setMimeType(ContentService.MimeType.JSON);
-    } 
-    else if (params.action === "votar") {
-      var data = sheetInscricoes.getDataRange().getValues();
-      for (var i = 1; i < data.length; i++) {
-        if (data[i][1] == params.id) {
-          var votosAtuais = Number(data[i][5] || 0);
-          sheetInscricoes.getRange(i + 1, 6).setValue(votosAtuais + 1);
-          return ContentService.createTextOutput(JSON.stringify({ status: "success", novosVotos: votosAtuais + 1 })).setMimeType(ContentService.MimeType.JSON);
-        }
-      }
-    }
-  } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() })).setMimeType(ContentService.MimeType.JSON);
-  } finally {
-    lock.releaseLock();
-  }
-}</pre>
-                    <button onclick="copyGasCode()" class="absolute top-3 right-3 px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-white font-semibold text-[10px] border border-slate-700">
-                        <i class="fa-regular fa-copy mr-1"></i> Copiar Código
-                    </button>
-                </div>
-
-                <div class="p-3 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300">
-                    <strong>Importante ao Publicar:</strong> Clique em <strong>Implantar &gt; Nova implantação</strong> &gt; Selecione Tipo "App da Web" &gt; Executar como: <strong>Eu</strong> &gt; Quem pode acessar: <strong>Qualquer pessoa</strong>. Depois, cole o link gerado clicando no botão "Configurar WebApp URL" na área de cadastro deste site.
-                </div>
-            </div>
-
-            <div class="p-4 bg-slate-800 border-t border-slate-700 flex justify-end">
-                <button onclick="closeGasModal()" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs">
-                    Entendido
+                <a href="https://forms.gle/hL79gAXhuLc9rq5x9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg shadow-brand-600/30 transition transform hover:-translate-y-0.5 active:translate-y-0">
+                    Cadastro Atividades
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <div class="flex items-center gap-2">
-                <div class="w-6 h-6 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-[10px]">
-                    LQ
-                </div>
-                <span>&copy; 2026 Escola Estadual Leonor Quadros - Jogos Escolares & Projetos</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#ao-vivo" class="hover:text-white transition">Ao Vivo</a>
-                <a href="#cadastro" class="hover:text-white transition">Inscrições</a>
-                <a href="#mvp" class="hover:text-white transition">Votação MVP</a>
-            </div>
+    <!-- Mobile Menu Nav -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-800/95 border-b border-slate-700 px-4 pt-2 pb-4 space-y-1 text-sm font-medium">
+        <a href="#ao-vivo" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-circle-play text-red-500 mr-2"></i> Ao Vivo</a>
+        <a href="https://forms.gle/hL79gAXhuLc9rq5x9" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-user-plus text-brand-500 mr-2"></i> Cadastro Atividades</a>
+        <a href="#chaveamento" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-sitemap text-amber-400 mr-2"></i> Chaveamento</a>
+        <a href="#classificacao" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-trophy text-yellow-500 mr-2"></i> Placar</a>
+        <a href="#mvp" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-700"><i class="fa-solid fa-star text-purple-400 mr-2"></i> Votação MVP</a>
+        <button onclick="openGasModal(); toggleMobileMenu();" class="w-full text-left px-3 py-2.5 rounded-lg text-brand-400 hover:bg-slate-700">
+            <i class="fa-solid fa-code mr-2"></i> Ver Código Apps Script Planilha
+        </button>
+    </div>
+</header>
+
+<section class="gradient-hero py-16 lg:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span> Edição Oficial 2026
+        </span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+            Jogos Interclasses <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-emerald-300 to-yellow-400">Projetos E.E. Leonor Quadros</span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+            Inscreva-se nos Torneios Esportivos e Feiras Culturais, Festival Multicultural e Empreendedorismo, vote no "MVP de Futsal Masculino"!
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://forms.gle/hL79gAXhuLc9rq5x9" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-base shadow-xl shadow-brand-600/30 transition transform hover:-translate-y-1">
+                <i class="fa-solid fa-pen-to-square mr-2"></i> Cadastro Atividades
+            </a>
+            <a href="#mvp" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-base transition transform hover:-translate-y-1">
+                <i class="fa-solid fa-fire text-amber-400 mr-2"></i> Votação MVP (Futsal)
+            </a>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // CONFIGURAÇÕES E ESTADO LOCAL
-        let webAppUrl = localStorage.getItem('lq_gas_url') || '';
-        
-        // Dados de Atletas/Participantes Padrão para Demonstração Inicial
-        let atletas = JSON.parse(localStorage.getItem('lq_atletas_data')) || [
-            { id: "LQ-101", nome: "Gabriel Santos", turma: "3º Ano A", modalidade: "Futsal Masculino", votos: 14 },
-            { id: "LQ-102", nome: "Lucas Oliveira", turma: "9º Ano A", modalidade: "Futsal Masculino", votos: 11 },
-            { id: "LQ-103", nome: "Matheus Pereira", turma: "1º Ano C", modalidade: "Futsal Masculino", votos: 8 },
-            { id: "LQ-104", nome: "Beatriz Lima", turma: "2º Ano B", modalidade: "Futsal Feminino", votos: 0 },
-            { id: "LQ-105", nome: "Carlos Eduardo", turma: "3º Ano B", modalidade: "Shows de Talentos Musicais no Palco", votos: 0 },
-            { id: "LQ-106", nome: "Mariana Costa", turma: "1º Ano A", modalidade: "Palestras Prof Silmara Sexologa", votos: 0 },
-            { id: "LQ-107", nome: "Enzo Fernandez", turma: "2º Ano D", modalidade: "Futsal Masculino", votos: 5 }
-        ];
+<main class="flex-grow space-y-16 py-12">
 
-        // INICIALIZAÇÃO
-        window.addEventListener('DOMContentLoaded', () => {
-            atualizarBannerGasStatus();
-            carregarDadosInscritos();
-        });
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        function openGasModal() {
-            document.getElementById('gas-modal').classList.remove('hidden');
-            document.getElementById('gas-modal').classList.add('flex');
-        }
-
-        function closeGasModal() {
-            document.getElementById('gas-modal').classList.add('hidden');
-            document.getElementById('gas-modal').classList.remove('flex');
-        }
-
-        function copyGasCode() {
-            const code = document.getElementById('code-gas-snippet').innerText;
-            const textarea = document.createElement('textarea');
-            textarea.value = code;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            alert('Código do Apps Script copiado para a área de transferência!');
-        }
-
-        function configureSheetUrl() {
-            const input = prompt("Insira a URL do seu Google Apps Script implantado (ou deixe vazio para usar o modo simulação local):", webAppUrl);
-            if (input !== null) {
-                webAppUrl = input.trim();
-                localStorage.setItem('lq_gas_url', webAppUrl);
-                atualizarBannerGasStatus();
-                carregarDadosInscritos();
-            }
-        }
-
-        function atualizarBannerGasStatus() {
-            const dot = document.getElementById('gas-status-dot');
-            const text = document.getElementById('gas-status-text');
-            
-            if (webAppUrl && webAppUrl.startsWith('https://script.google.com')) {
-                dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400';
-                text.innerText = 'Integração Google Sheets: CONECTADO';
-            } else {
-                dot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400';
-                text.innerText = 'Integração Google Sheets: Modo Local/Simulação';
-            }
-        }
-
-        // CARREGAR DADOS DAS INSCRIÇÕES (DO APPS SCRIPT OU LOCAL)
-        async function carregarDadosInscritos() {
-            if (webAppUrl && webAppUrl.startsWith('https://script.google.com')) {
-                try {
-                    const res = await fetch(webAppUrl);
-                    const data = await res.json();
-                    if (Array.isArray(data) && data.length > 0) {
-                        atletas = data;
-                        localStorage.setItem('lq_atletas_data', JSON.stringify(atletas));
-                    }
-                } catch (e) {
-                    console.warn("Falha ao buscar da planilha do Google. Usando armazenamento local.", e);
-                }
-            }
-            renderizarTabelaInscritos();
-            renderizarMVP();
-        }
-
-        // CADASTRO DE NOVO PARTICIPANTE
-        async function handleFormSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('btn-submit-form');
-            const nomeInput = document.getElementById('nome');
-            const turmaInput = document.getElementById('turma');
-            const modalidadeInput = document.getElementById('modalidade');
-
-            const novoInscrito = {
-                id: "LQ-" + new Date().getTime(),
-                nome: nomeInput.value.trim(),
-                turma: turmaInput.value.trim(),
-                modalidade: modalidadeInput.value,
-                votos: 0
-            };
-
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Efetuando Inscrição...';
-
-            if (webAppUrl && webAppUrl.startsWith('https://script.google.com')) {
-                try {
-                    await fetch(webAppUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            action: 'cadastrar',
-                            nome: novoInscrito.nome,
-                            turma: novoInscrito.turma,
-                            modalidade: novoInscrito.modalidade
-                        })
-                    });
-                } catch (err) {
-                    console.error("Erro ao enviar para Google Sheets:", err);
-                }
-            }
-
-            // Atualização local imediata
-            atletas.unshift(novoInscrito);
-            localStorage.setItem('lq_atletas_data', JSON.stringify(atletas));
-
-            alert(`Inscrição realizada com sucesso!\n\nNome: ${novoInscrito.nome}\nTurma: ${novoInscrito.turma}\nModalidade/Projeto: ${novoInscrito.modalidade}`);
-
-            // Reseta o formulário
-            nomeInput.value = '';
-            turmaInput.value = '';
-            modalidadeInput.value = '';
-            btn.disabled = false;
-            btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Finalizar Inscrição';
-
-            renderizarTabelaInscritos();
-            renderizarMVP();
-        }
-
-        // RENDERIZAR TABELA DE PARTICIPANTES INSCRITOS
-        function renderizarTabelaInscritos() {
-            const container = document.getElementById('container-tabela-inscritos');
-            const filtro = document.getElementById('filtro-tabela-modalidade').value;
-            const badgeTotal = document.getElementById('total-inscritos-badge');
-
-            badgeTotal.innerText = `${atletas.length} Alunos`;
-
-            let dadosFiltrados = atletas;
-            if (filtro === 'PROJETOS') {
-                dadosFiltrados = atletas.filter(a => a.modalidade !== 'Futsal Masculino' && a.modalidade !== 'Futsal Feminino' && a.modalidade !== 'Vôlei Misto' && a.modalidade !== 'Basquete' && a.modalidade !== 'E-Sports');
-            } else if (filtro !== 'TODOS') {
-                dadosFiltrados = atletas.filter(a => a.modalidade === filtro);
-            }
-
-            if (dadosFiltrados.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-8 text-slate-500 text-xs">
-                        <i class="fa-solid fa-folder-open text-2xl mb-2 block"></i>
-                        Nenhuma inscrição encontrada neste filtro.
-                    </div>
-                `;
-                return;
-            }
-
-            container.innerHTML = dadosFiltrados.map(a => `
-                <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-700/80 flex items-center justify-between text-xs hover:border-slate-600 transition">
-                    <div class="space-y-0.5 max-w-[70%]">
-                        <div class="font-bold text-white truncate">${a.nome}</div>
-                        <div class="text-slate-400 text-[11px]"><i class="fa-solid fa-graduation-cap text-slate-500 mr-1"></i>${a.turma}</div>
-                        <span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-semibold ${
-                            a.modalidade === 'Futsal Masculino' ? 'bg-brand-500/20 text-brand-300 border border-brand-500/30' : 'bg-slate-800 text-slate-300 border border-slate-700'
-                        }">
-                            ${a.modalidade}
+    <section id="ao-vivo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
+        <div class="bg-slate-800/80 rounded-2xl border border-slate-700 p-6 shadow-2xl">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <h2 class="font-display text-2xl font-bold text-white">Transmissão Ao Vivo</h2>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold border border-red-500/30">
+                            <span class="w-2 h-2 rounded-full bg-red-500 pulse-live"></span> AO VIVO
                         </span>
                     </div>
-                    ${a.modalidade === 'Futsal Masculino' ? `
-                        <div class="text-right">
-                            <span class="text-amber-400 font-extrabold text-sm block">${a.votos || 0}</span>
-                            <span class="text-[9px] text-slate-500 uppercase font-semibold">Votos MVP</span>
-                        </div>
-                    ` : `
-                        <div class="text-slate-500 text-[10px] italic">Inscrito</div>
-                    `}
+                    <p class="text-slate-400 text-sm mt-1">Quadra Principal - Escola Leonor Quadros</p>
                 </div>
-            `).join('');
-        }
+                <div class="text-xs text-slate-400 bg-slate-900/60 px-3 py-2 rounded-lg border border-slate-700 inline-flex items-center gap-2 self-start md:self-auto">
+                    <i class="fa-solid fa-video text-brand-400"></i> Google Meet Transmissão Integrada
+                </div>
+            </div>
 
-        // RENDERIZAR VOTAÇÃO MVP (FILTRADO STRICTAMENTE PARA FUTSAL MASCULINO)
-        function renderizarMVP() {
-            const containerMvp = document.getElementById('cards-mvp');
+            <!-- Video Frame -->
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-700/80 shadow-inner group">
+                <iframe src="https://meet.google.com/xxy-qkgy-oat" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2 pt-2 border-t border-slate-700/50">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle text-emerald-500 text-[10px]"></i> Sinal de alta definição estático ativado</span>
+                <a href="https://meet.google.com/xxy-qkgy-oat" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:text-brand-300 font-semibold inline-flex items-center gap-1 hover:underline">
+                    Abrir transmissão em tela cheia <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadastro" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            // Filtro exclusivo por Futsal Masculino
-            const atletasFutsalMasc = atletas.filter(a => a.modalidade === "Futsal Masculino");
+            <!-- Formulário de Inscrição -->
+            <div class="lg:col-span-7 bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-bl-full pointer-events-none"></div>
 
-            if (atletasFutsalMasc.length === 0) {
-                containerMvp.innerHTML = `
-                    <div class="col-span-full text-center py-12 bg-slate-900/60 rounded-2xl border border-slate-700/60 text-slate-400 text-sm">
-                        <i class="fa-solid fa-user-ninja text-3xl mb-3 text-slate-500 block"></i>
-                        Nenhum atleta cadastrado na modalidade <strong>Futsal Masculino</strong> ainda.<br>
-                        Faça a inscrição acima na opção "Futsal Masculino" para aparecer nesta lista de votação!
+                <div class="mb-6">
+                    <span class="text-brand-400 font-semibold text-xs uppercase tracking-wider">Inscrição de Aluno</span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Cadastro de Atleta & Projetos</h2>
+                    <p class="text-slate-400 text-sm mt-1">Preencha os campos abaixo para participar do Interclasse ou das Atividades Recreativas e Culturais.</p>
+                </div>
+
+                <!-- App Script Config Connection Banner -->
+                <div id="gas-status-banner" class="mb-6 p-3 rounded-xl bg-slate-900/80 border border-slate-700 text-xs flex items-center justify-between gap-3 text-slate-300">
+                    <div class="flex items-center gap-2">
+                        <span id="gas-status-dot" class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                        <span id="gas-status-text">Status Integração Google Sheets: Modo Local/Simulação</span>
                     </div>
-                `;
-                return;
-            }
+                    <button onclick="configureSheetUrl()" class="text-brand-400 hover:underline font-semibold shrink-0">
+                        Configurar WebApp URL
+                    </button>
+                </div>
 
-            // Ordena os candidatos por número de votos (maior primeiro)
-            atletasFutsalMasc.sort((a, b) => (b.votos || 0) - (a.votos || 0));
-
-            containerMvp.innerHTML = atletasFutsalMasc.map((atleta, index) => `
-                <div class="bg-slate-900 rounded-xl border ${index === 0 ? 'border-amber-500/60 ring-1 ring-amber-500/30 shadow-amber-500/10' : 'border-slate-700'} p-5 flex flex-col justify-between shadow-xl relative overflow-hidden group hover:border-brand-500/60 transition duration-300">
-                    
-                    ${index === 0 ? `
-                        <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-3 py-0.5 rounded-bl uppercase">
-                            <i class="fa-solid fa-crown mr-1"></i> Líder MVP
-                        </div>
-                    ` : ''}
-
+                <form id="form-cadastro" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                    <!-- CAMPO 1: Nome Completo -->
                     <div>
-                        <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-400 font-bold text-lg mb-3">
-                            ${atleta.nome.charAt(0)}
+                        <label for="nome" class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">
+                            Nome Completo <span class="text-red-400">*</span>
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <input type="text" id="nome" required placeholder="Ex: João Silva" class="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition">
                         </div>
-                        <h3 class="font-display font-bold text-base text-white group-hover:text-brand-400 transition">${atleta.nome}</h3>
-                        <p class="text-xs text-slate-400 mt-0.5"><i class="fa-solid fa-shield text-slate-500 mr-1"></i>${atleta.turma}</p>
-                        <p class="text-[11px] text-emerald-400 font-medium mt-1">Futsal Masculino</p>
                     </div>
 
-                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                        <div>
-                            <span class="text-xs text-slate-400 block text-[10px] uppercase font-semibold">Pontuação</span>
-                            <span class="font-extrabold text-xl text-amber-400" id="votos-count-${atleta.id}">${atleta.votos || 0} <span class="text-xs font-normal text-slate-400">votos</span></span>
+                    <!-- CAMPO 2: Série / Turma -->
+                    <div>
+                        <label for="turma" class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">
+                            Série / Turma <span class="text-red-400">*</span>
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <input type="text" id="turma" required placeholder="Ex: 3º Ano A" class="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition">
                         </div>
-                        <button onclick="votarMVP('${atleta.id}')" class="px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-md shadow-brand-600/20 transition transform active:scale-95 flex items-center gap-1.5">
-                            <i class="fa-solid fa-thumbs-up"></i> Votar
-                        </button>
+                    </div>
+
+                    <!-- CAMPO 3: Modalidade / Atividade -->
+                    <div>
+                        <label for="modalidade" class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">
+                            Modalidade / Atividade / Projeto <span class="text-red-400">*</span>
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <select id="modalidade" required onchange="handleModalidadeChange()" class="w-full pl-10 pr-10 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm appearance-none transition">
+                                <option value="" disabled selected>Selecione uma opção...</option>
+
+                                <!-- Esportes do Interclasse -->
+                                <optgroup label="🏆 Torneios Esportivos (Com Votação MVP no Futsal Masc.)" class="bg-slate-800 text-brand-400 font-bold">
+                                    <option value="Futsal Masculino" class="text-white">Futsal Masculino</option>
+                                    <option value="Futsal Feminino" class="text-white">Futsal Feminino</option>
+                                    <option value="Vôlei Misto" class="text-white">Vôlei Misto</option>
+                                    <option value="Basquete" class="text-white">Basquete</option>
+                                    <option value="E-Sports" class="text-white">E-Sports</option>
+                                </optgroup>
+
+                                <!-- Brincadeiras de Rua -->
+                                <optgroup label="🎯 Recreação & Brincadeiras" class="bg-slate-800 text-amber-400 font-bold">
+                                    <option value="Brincadeiras de Rua & Atividades recreativas" class="text-white">Brincadeiras de Rua & Atividades recreativas</option>
+                                </optgroup>
+
+                                <!-- Eventos & Projetos Especiais da Escola -->
+                                <optgroup label="🌟 Projetos & Eventos da Escola Leonor Quadros" class="bg-slate-800 text-purple-400 font-bold">
+                                    <option value="Inclusão" class="text-white">Inclusão</option>
+                                    <option value="Empreendedorismo Feira da Produtos" class="text-white">Empreendedorismo / Feira de Empreendedorismo</option>
+                                    <option value="Mostra de Ciências" class="text-white">Mostra de Ciências</option>
+                                    <option value="Jogos de Tabuleiro" class="text-white">Jogos de Tabuleiro</option>
+                                    <option value="Workshop" class="text-white">Workshop</option>
+                                    <option value="Beleza e Estetica" class="text-white">Beleza e Estetica</option>
+                                    <option value="Palestras Prof Silmara Sexologa" class="text-white">Palestras Prof Silmara Sexologa</option>
+                                    <option value="Shows de Talentos Musicais no Palco" class="text-white">Shows de Talentos Musicais no Palco</option>
+                                    <option value="Conciencia Negra & Afro-Brasileira" class="text-white">Conciencia Negra & Afro-Brasileira</option>
+                                    <option value="Primavera & Meio Ambiente" class="text-white">Primavera & Meio Ambiente</option>
+                                </optgroup>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+
+                        <!-- CAMPO DINÂMICO: Detalhes / Descrição do Projeto -->
+                        <div id="campo-detalhes-projeto" class="hidden mt-4">
+                            <label for="detalhes-projeto" class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">
+                                <i class="fa-solid fa-file-lines text-purple-400 mr-1"></i>
+                                Detalhes / Descrição do Projeto <span class="text-red-400">*</span>
+                            </label>
+                            <div class="relative">
+                                <div class="absolute top-3.5 left-3.5 flex items-start pointer-events-none text-slate-400">
+                                    <i class="fa-solid fa-align-left"></i>
+                                </div>
+                                <textarea
+                                    id="detalhes-projeto"
+                                    rows="4"
+                                    maxlength="1000"
+                                    oninput="updateCharCount()"
+                                    placeholder="Descreva brevemente a ideia, proposta, apresentação ou projeto..."
+                                    class="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition resize-y"
+                                ></textarea>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 mt-1.5">
+                                <p class="text-[11px] text-slate-400">
+                                    <i class="fa-solid fa-circle-info text-purple-400 mr-1"></i>
+                                    Para esta modalidade, a descrição do projeto é enviada para a Planilha (Coluna F).
+                                </p>
+                                <span id="contador-detalhes-projeto" class="text-[10px] text-slate-500 shrink-0">0/1000</span>
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-slate-400 mt-1.5">
+                            <i class="fa-solid fa-circle-info text-amber-400 mr-1"></i> Apenas inscritos em <strong>Futsal Masculino</strong> concorrem à votação de MVP.
+                        </p>
+                    </div>
+
+                    <!-- Submeter -->
+                    <button type="submit" id="btn-submit-form" class="w-full py-3.5 px-6 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm shadow-lg shadow-brand-600/30 transition duration-200 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Finalizar Inscrição
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tabela de Cadastrados em Tempo Real -->
+            <div class="lg:col-span-5 bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl flex flex-col h-full min-h-[480px]">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-white">Inscritos Recentes</h3>
+                        <p class="text-xs text-slate-400">Lista em tempo real dos participantes</p>
+                    </div>
+                    <span id="total-inscritos-badge" class="px-2.5 py-1 rounded-full bg-slate-700 text-brand-400 text-xs font-bold border border-slate-600">
+                        0 Alunos
+                    </span>
+                </div>
+
+                <!-- Filtro por Modalidade -->
+                <div class="mb-4">
+                    <select id="filtro-tabela-modalidade" onchange="renderizarTabelaInscritos()" class="w-full py-2 px-3 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-300 focus:outline-none">
+                        <option value="TODOS">Filtrar por: Todas as Modalidades/Eventos</option>
+                        <option value="Futsal Masculino">Apenas Futsal Masculino</option>
+                        <option value="Futsal Feminino">Apenas Futsal Feminino</option>
+                        <option value="Vôlei Misto">Apenas Vôlei Misto</option>
+                        <option value="Basquete">Apenas Basquete</option>
+                        <option value="E-Sports">Apenas E-Sports</option>
+                        <option value="PROJETOS">Apenas Projetos & Recreação</option>
+                    </select>
+                </div>
+
+                <!-- Lista com rolagem -->
+                <div class="flex-grow overflow-y-auto max-h-[360px] pr-1 space-y-2.5" id="container-tabela-inscritos">
+                    <!-- Renderizado via JS -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="chaveamento" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Mata-Mata Oficial</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Chaveamento do Torneio</h2>
+                <p class="text-slate-400 text-sm mt-1">Quadro oficial de confrontos do Interclasse Leonor Quadros 2026</p>
+            </div>
+
+            <!-- Imagem/Banner Oficial do Chaveamento -->
+            <div class="mb-10 text-center">
+                <div class="inline-block p-2 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl max-w-2xl w-full group overflow-hidden">
+                    <img src="chaveamento.jpg" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x400/1e293b/22c55e?text=Chaveamento+Oficial+Interclasse+2026';" 
+                         alt="Chaveamento Oficial Interclasse Leonor Quadros 2026" 
+                         class="w-full h-auto rounded-xl object-cover transform group-hover:scale-[1.01] transition duration-300">
+                </div>
+            </div>
+
+            <!-- Detalhamento em Bracket Interativo -->
+            <h3 class="font-display font-bold text-center text-lg text-white mb-6 border-b border-slate-700/60 pb-3">
+                <i class="fa-solid fa-sitemap text-amber-400 mr-2"></i>Detalhamento por Etapas
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Quartas de Final -->
+                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700">
+                    <h4 class="text-xs font-bold uppercase text-brand-400 text-center mb-3 tracking-wider flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bolt"></i> Quartas de Final
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
+                            <div class="flex justify-between items-center text-emerald-400 font-bold">
+                                <span>9º Ano A</span>
+                                <span class="bg-slate-900 px-2 py-0.5 rounded text-white">3</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-400">
+                                <span>1º Ano B</span>
+                                <span class="bg-slate-900 px-2 py-0.5 rounded text-slate-400">2</span>
+                            </div>
+                            <div class="text-[10px] text-slate-500 pt-1 text-right italic">Jogo 1 - Concluído</div>
+                        </div>
+
+                        <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
+                            <div class="flex justify-between items-center text-emerald-400 font-bold">
+                                <span>1º Ano C</span>
+                                <span class="bg-slate-900 px-2 py-0.5 rounded text-white">1</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-400">
+                                <span>2º Ano D</span>
+                                <span class="bg-slate-900 px-2 py-0.5 rounded text-slate-400">0</span>
+                            </div>
+                            <div class="text-[10px] text-slate-500 pt-1 text-right italic">Jogo 2 - Concluído</div>
+                        </div>
                     </div>
                 </div>
-            `).join('');
+
+                <!-- Semifinais -->
+                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700">
+                    <h4 class="text-xs font-bold uppercase text-amber-400 text-center mb-3 tracking-wider flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-fire"></i> Semifinais
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
+                            <div class="flex justify-between items-center text-emerald-400 font-bold">
+                                <span>9º Ano A</span>
+                                <span class="bg-slate-900 px-2 py-0.5 rounded text-white">3</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-400">
+                                <span>1º Ano C</span>
+                                <span class="bg-slate-900 px-2 py-0.5 rounded text-slate-400">2</span>
+                            </div>
+                            <div class="text-[10px] text-slate-500 pt-1 text-right italic">Semi 1 - Concluído</div>
+                        </div>
+
+                        <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
+                            <div class="flex justify-between items-center text-amber-400 font-bold">
+                                <span>3º Ano A</span>
+                                <span class="bg-slate-900 px-2 py-0.5 rounded text-amber-400">-</span>
+                            </div>
+                            <div class="flex justify-between items-center text-amber-400 font-bold">
+                                <span>3º Ano B</span>
+                                <span class="bg-slate-900 px-2 py-0.5 rounded text-amber-400">-</span>
+                            </div>
+                            <div class="text-[10px] text-amber-400 pt-1 text-right italic font-semibold">Semi 2 - Em Breve</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grande Final -->
+                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700">
+                    <h4 class="text-xs font-bold uppercase text-purple-400 text-center mb-3 tracking-wider flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-trophy"></i> Grande Final
+                    </h4>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-amber-500/40 text-xs space-y-2 text-center">
+                        <div class="text-emerald-400 font-bold text-sm">9º Ano A</div>
+                        <div class="text-slate-500 text-[10px] font-bold uppercase">VS</div>
+                        <div class="text-slate-400 font-bold text-sm">Vencedor Semi 2</div>
+                        <div class="pt-2 text-[11px] text-amber-400 font-semibold border-t border-slate-700/60">
+                            🏆 Disputa do Título Interclasse
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="classificacao" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                    <span class="text-yellow-400 text-xs font-bold uppercase tracking-wider">Pontuação Geral</span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Tabela de Classificação</h2>
+                    <p class="text-slate-400 text-sm mt-1">Ranking de turmas agregando esportes e participação em projetos</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-700">
+                        <i class="fa-solid fa-rotate text-brand-400 mr-1"></i> Atualizado ao vivo
+                    </span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="bg-slate-900/90 text-xs uppercase text-slate-400 border-b border-slate-700">
+                        <tr>
+                            <th class="py-3 px-4">Posição</th>
+                            <th class="py-3 px-4">Série / Turma</th>
+                            <th class="py-3 px-4 text-center">Vitórias</th>
+                            <th class="py-3 px-4 text-center">Projetos</th>
+                            <th class="py-3 px-4 text-right">Pontos Totais</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700/60" id="tabela-classificacao">
+                        <tr class="hover:bg-slate-700/30 transition">
+                            <td class="py-3 px-4 font-bold text-amber-400 flex items-center gap-2">
+                                <i class="fa-solid fa-crown text-amber-400"></i> 1º
+                            </td>
+                            <td class="py-3 px-4 font-bold text-white">3º Ano A</td>
+                            <td class="py-3 px-4 text-center">4</td>
+                            <td class="py-3 px-4 text-center">3</td>
+                            <td class="py-3 px-4 text-right font-bold text-brand-400">25 pts</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition">
+                            <td class="py-3 px-4 font-bold text-slate-300">2º</td>
+                            <td class="py-3 px-4 font-semibold text-white">9º Ano A</td>
+                            <td class="py-3 px-4 text-center">3</td>
+                            <td class="py-3 px-4 text-center">2</td>
+                            <td class="py-3 px-4 text-right font-bold text-brand-400">18 pts</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition">
+                            <td class="py-3 px-4 font-bold text-amber-600">3º</td>
+                            <td class="py-3 px-4 font-semibold text-white">1º Ano C</td>
+                            <td class="py-3 px-4 text-center">2</td>
+                            <td class="py-3 px-4 text-center">2</td>
+                            <td class="py-3 px-4 text-right font-bold text-brand-400">14 pts</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition">
+                            <td class="py-3 px-4 text-slate-400">4º</td>
+                            <td class="py-3 px-4 text-slate-300">3º Ano B</td>
+                            <td class="py-3 px-4 text-center">2</td>
+                            <td class="py-3 px-4 text-center">1</td>
+                            <td class="py-3 px-4 text-right font-bold text-brand-400">11 pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="mvp" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <div>
+                    <span class="text-purple-400 text-xs font-bold uppercase tracking-wider">Premiação Individual</span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Votação MVP - Futsal Masculino</h2>
+                    <p class="text-slate-400 text-sm mt-1">Selecione o atleta destaque. Os votos são contabilizados na coluna <strong>Votos</strong> da planilha oficial.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="carregarDadosInscritos()" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-700 text-xs font-semibold text-brand-400 border border-slate-700 transition flex items-center gap-2">
+                        <i class="fa-solid fa-arrows-rotate"></i> Atualizar Votação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Candidatos MVP -->
+            <div id="grid-mvp-candidatos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Renderizado dinamicamente via JS -->
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="modal-gas" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-slate-700 rounded-2xl max-w-3xl w-full p-6 shadow-2xl relative max-h-[90vh] flex flex-col">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-700">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-brand-500 text-xl"></i>
+                <h3 class="font-display font-bold text-lg text-white">Código do Google Apps Script (Code.gs) Atualizado</h3>
+            </div>
+            <button onclick="closeGasModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+
+        <div class="py-4 space-y-3 overflow-y-auto text-xs text-slate-300">
+            <p>Copie e atualize o código abaixo no seu editor do <strong>Google Apps Script</strong> vinculado à Planilha Google (Aba <code>Atletas</code>):</p>
+            
+            <div class="relative">
+                <button onclick="copiarCodigoGas()" class="absolute top-2 right-2 px-3 py-1 bg-brand-600 hover:bg-brand-500 text-white text-[11px] font-bold rounded shadow transition">
+                    <i class="fa-solid fa-copy mr-1"></i> Copiar Código
+                </button>
+                <pre id="codigo-gas-text" class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-slate-300 font-mono text-[11px] overflow-x-auto leading-relaxed select-all">
+// ========================================================
+// GOOGLE APPS SCRIPT - INTERCLASSE LEONOR QUADROS 2026
+// Cole este código no editor (Extensões > Apps Script)
+// ========================================================
+
+function doGet(e) {
+  var sheet = getOrCreateSheet();
+  var data = sheet.getDataRange().getValues();
+  var rows = [];
+  
+  // Pula a linha do cabeçalho (Linha 1)
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][0]) {
+      // Força a leitura limpa do ID como String
+      var rawId = String(data[i][0]).replace(/^'/, '').trim();
+      rows.push({
+        id: rawId,
+        nome: String(data[i][1] || ""),
+        turma: String(data[i][2] || ""),
+        modalidade: String(data[i][3] || ""),
+        votos: Number(data[i][4]) || 0,
+        detalhes: String(data[i][5] || "")
+      });
+    }
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify(rows))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function doPost(e) {
+  try {
+    var sheet = getOrCreateSheet();
+    var contents = JSON.parse(e.postData.contents);
+    var action = contents.action;
+
+    if (action === "cadastrar") {
+      // Salva o ID precedido por aspa simples para forçar texto no Google Sheets
+      var athleteId = contents.id ? String(contents.id) : Date.now().toString();
+      var formattedId = "'" + athleteId;
+      
+      sheet.appendRow([
+        formattedId,
+        contents.nome || "",
+        contents.turma || "",
+        contents.modalidade || "",
+        0, // Votos iniciais (Coluna E - 5)
+        contents.detalhes || "" // Descrição/Detalhes do Projeto (Coluna F - 6)
+      ]);
+      return responseJSON({ status: "success", message: "Inscrição efetuada com sucesso!", id: athleteId });
+    }
+
+    if (action === "votar") {
+      var targetId = String(contents.id).trim();
+      var data = sheet.getDataRange().getValues();
+
+      for (var i = 1; i < data.length; i++) {
+        var cellId = String(data[i][0]).replace(/^'/, '').trim();
+        if (cellId === targetId) {
+          var currentVotes = Number(data[i][4]) || 0;
+          var newVotes = currentVotes + 1;
+          sheet.getRange(i + 1, 5).setValue(newVotes); // Atualiza Coluna E (Votos)
+          return responseJSON({ status: "success", id: targetId, newVotes: newVotes });
         }
+      }
+      return responseJSON({ status: "error", message: "Atleta com o ID não foi localizado na planilha." });
+    }
 
-        // COMPUTAR VOTO NO MVP
-        async function votarMVP(idAtleta) {
-            const atleta = atletas.find(a => a.id === idAtleta);
-            if (!atleta) return;
+    return responseJSON({ status: "error", message: "Ação não reconhecida." });
+  } catch (err) {
+    return responseJSON({ status: "error", message: err.toString() });
+  }
+}
 
-            atleta.votos = (atleta.votos || 0) + 1;
-            localStorage.setItem('lq_atletas_data', JSON.stringify(atletas));
+function getOrCreateSheet() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("Atletas");
+  if (!sheet) {
+    sheet = ss.insertSheet("Atletas");
+    // Estrutura das colunas: A=ID, B=Nome, C=Turma, D=Modalidade, E=Votos, F=Detalhes
+    sheet.appendRow(["ID", "Nome", "Turma", "Modalidade", "Votos", "Detalhes / Descrição do Projeto"]);
+  }
+  return sheet;
+}
 
-            renderizarMVP();
-            renderizarTabelaInscritos();
+function responseJSON(data) {
+  return ContentService.createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
+}</pre>
+            </div>
+            <div class="p-3 bg-slate-900 rounded-lg border border-slate-700 text-[11px] space-y-1">
+                <p class="font-bold text-brand-400">Passos cruciais após colar o código:</p>
+                <ol class="list-decimal pl-4 space-y-1 text-slate-300">
+                    <li>Clique em <strong>Salvar</strong> (ícone de disquete).</li>
+                    <li>Clique no botão azul <strong>Implantar &gt; Gerenciar implantações</strong>.</li>
+                    <li>Clique no ícone de <strong>Lápis (Editar)</strong> na implantação existente.</li>
+                    <li>Em <strong>Versão</strong>, selecione <strong>Nova Versão</strong> (obrigatório para aplicar alterações!).</li>
+                    <li>Verifique se <em>Quem pode acessar</em> está como <strong>Qualquer pessoa (Anyone)</strong>.</li>
+                    <li>Clique em <strong>Implantar</strong>.</li>
+                </ol>
+            </div>
+        </div>
 
-            if (webAppUrl && webAppUrl.startsWith('https://script.google.com')) {
-                try {
-                    await fetch(webAppUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            action: 'votar',
-                            id: idAtleta
-                        })
-                    });
-                } catch (e) {
-                    console.error("Erro ao registrar voto na planilha:", e);
+        <div class="pt-4 border-t border-slate-700 text-right">
+            <button onclick="closeGasModal()" class="px-5 py-2.5 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl text-xs">
+                Fechar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+<!-- FOOTER -->
+<footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+        <p class="mb-2">© 2026 Escola Estadual Leonor Quadros - Gestão de Interclasses & Feira Cultural</p>
+        <p class="text-slate-600">Desenvolvido com integração em tempo real para Google Sheets.</p>
+    </div>
+</footer>
+
+<script>
+/* ========================================================
+   ESTADO GLOBAL E DADOS INICIAIS
+   ======================================================== */
+const LOCAL_STORAGE_KEY_URL = "lq_gas_webapp_url";
+const LOCAL_STORAGE_KEY_DATA = "lq_atletas_data_v2";
+
+// Dados mock predefinidos baseados nos registros reais fornecidos
+const DADOS_INICIAIS = [
+    { id: "1789645965315", nome: "Teste", turma: "3A", modalidade: "Conciencia Negra & Afro-Brasileira", votos: 0, detalhes: "Apresentação sobre história e cultura afro-brasileira." },
+    { id: "1789646005166", nome: "teste", turma: "3A", modalidade: "Beleza e Estetica", votos: 0, detalhes: "Workshop prático de estética e autocuidado." },
+    { id: "1789646055025", nome: "Felipe", turma: "3A", modalidade: "Futsal Masculino", votos: 0, detalhes: "" },
+    { id: "1789646257300", nome: "Felipe", turma: "3A", modalidade: "Futsal Masculino", votos: 0, detalhes: "" },
+    { id: "1789646374083", nome: "test", turma: "3a", modalidade: "Futsal Masculino", votos: 0, detalhes: "" },
+    { id: "1789646480285", nome: "MARCELLO", turma: "2c", modalidade: "Futsal Masculino", votos: 0, detalhes: "" },
+    { id: "1789647809098", nome: "Jose Anderson", turma: "3B", modalidade: "Futsal Masculino", votos: 0, detalhes: "" },
+    { id: "1789647926781", nome: "Jose", turma: "3c", modalidade: "Futsal Masculino", votos: 0, detalhes: "" },
+    { id: "1789648119091", nome: "joao", turma: "2c", modalidade: "Futsal Masculino", votos: 0, detalhes: "" }
+];
+
+let webAppUrl = localStorage.getItem(LOCAL_STORAGE_KEY_URL) || "";
+let atletas = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    carregarDadosInscritos();
+    atualizarBannerStatusGAS();
+});
+
+function toggleMobileMenu() {
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.toggle("hidden");
+}
+
+function openGasModal() {
+    document.getElementById("modal-gas").classList.remove("hidden");
+}
+
+function closeGasModal() {
+    document.getElementById("modal-gas").classList.add("hidden");
+}
+
+function copiarCodigoGas() {
+    const codeText = document.getElementById("codigo-gas-text").innerText;
+    navigator.clipboard.writeText(codeText).then(() => {
+        showToast("Código copiado com sucesso!", "success");
+    }).catch(() => {
+        showToast("Erro ao copiar o código.", "error");
+    });
+}
+
+function configureSheetUrl() {
+    const input = prompt("Cole a URL da sua Implantação do WebApp do Google Apps Script (https://script.google.com/macros/s/.../exec):", webAppUrl);
+    if (input !== null) {
+        webAppUrl = input.trim();
+        localStorage.setItem(LOCAL_STORAGE_KEY_URL, webAppUrl);
+        atualizarBannerStatusGAS();
+        carregarDadosInscritos();
+        showToast(webAppUrl ? "URL do Google Sheets atualizada!" : "Modo Local/Simulação ativado.", "info");
+    }
+}
+
+function atualizarBannerStatusGAS() {
+    const dot = document.getElementById("gas-status-dot");
+    const text = document.getElementById("gas-status-text");
+
+    if (webAppUrl && webAppUrl.startsWith("http")) {
+        dot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+        text.innerHTML = "Status Integração Google Sheets: <strong>Conectado ao WebApp</strong>";
+    } else {
+        dot.className = "w-2.5 h-2.5 rounded-full bg-amber-400";
+        text.innerHTML = "Status Integração Google Sheets: <strong>Modo Local / Simulação</strong>";
+    }
+}
+
+function handleModalidadeChange() {
+    const modalidade = document.getElementById("modalidade").value;
+    const campoDetalhes = document.getElementById("campo-detalhes-projeto");
+    const detalhesInput = document.getElementById("detalhes-projeto");
+
+    // Modalidades esportivas tradicionais
+    const esportesTradicionais = [
+        "Futsal Masculino",
+        "Futsal Feminino",
+        "Vôlei Misto",
+        "Basquete",
+        "E-Sports"
+    ];
+
+    if (modalidade && !esportesTradicionais.includes(modalidade)) {
+        campoDetalhes.classList.remove("hidden");
+        detalhesInput.required = true;
+    } else {
+        campoDetalhes.classList.add("hidden");
+        detalhesInput.required = false;
+        detalhesInput.value = "";
+        updateCharCount();
+    }
+}
+
+function updateCharCount() {
+    const input = document.getElementById("detalhes-projeto");
+    const counter = document.getElementById("contador-detalhes-projeto");
+    if (input && counter) {
+        counter.textContent = `${input.value.length}/1000`;
+    }
+}
+
+async function carregarDadosInscritos() {
+    if (webAppUrl && webAppUrl.startsWith("http")) {
+        try {
+            const res = await fetch(webAppUrl);
+            if (res.ok) {
+                const remoteData = await res.json();
+                if (Array.isArray(remoteData)) {
+                    atletas = remoteData;
+                    salvarLocalmente();
+                    renderizarTabelaInscritos();
+                    renderizarGridMVP();
+                    return;
                 }
             }
+        } catch (e) {
+            console.warn("Falha ao buscar dados do Google Apps Script. Usando cache local.", e);
         }
-    </script>
+    }
+
+    // Fallback: carregar do localStorage ou dados iniciais
+    const cached = localStorage.getItem(LOCAL_STORAGE_KEY_DATA);
+    if (cached) {
+        try {
+            atletas = JSON.parse(cached);
+        } catch (e) {
+            atletas = DADOS_INICIAIS;
+        }
+    } else {
+        atletas = DADOS_INICIAIS;
+        salvarLocalmente();
+    }
+
+    renderizarTabelaInscritos();
+    renderizarGridMVP();
+}
+
+function salvarLocalmente() {
+    localStorage.setItem(LOCAL_STORAGE_KEY_DATA, JSON.stringify(atletas));
+}
+
+async function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const turma = document.getElementById("turma").value.trim();
+    const modalidade = document.getElementById("modalidade").value;
+    const detalhes = document.getElementById("detalhes-projeto").value.trim();
+    const btnSubmit = document.getElementById("btn-submit-form");
+
+    if (!nome || !turma || !modalidade) {
+        showToast("Por favor, preencha todos os campos obrigatórios.", "error");
+        return;
+    }
+
+    const novoAtleta = {
+        id: Date.now().toString(),
+        nome: nome,
+        turma: turma,
+        modalidade: modalidade,
+        votos: 0,
+        detalhes: detalhes
+    };
+
+    btnSubmit.disabled = true;
+    btnSubmit.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Registrando...`;
+
+    // Se houver WebApp URL configurada, envia via POST usando text/plain para evitar preflight CORS
+    if (webAppUrl && webAppUrl.startsWith("http")) {
+        try {
+            await fetch(webAppUrl, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
+                body: JSON.stringify({
+                    action: "cadastrar",
+                    ...novoAtleta
+                })
+            });
+            showToast("Inscrição enviada para a Planilha Google!", "success");
+        } catch (err) {
+            console.error("Erro ao salvar na planilha:", err);
+            showToast("Salvo localmente (erro ao acessar a planilha).", "info");
+        }
+    } else {
+        showToast("Inscrição efetuada com sucesso (Modo Local)!", "success");
+    }
+
+    // Adiciona no estado local
+    atletas.unshift(novoAtleta);
+    salvarLocalmente();
+    renderizarTabelaInscritos();
+    renderizarGridMVP();
+
+    // Reset Form
+    document.getElementById("form-cadastro").reset();
+    document.getElementById("campo-detalhes-projeto").classList.add("hidden");
+    btnSubmit.disabled = false;
+    btnSubmit.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Finalizar Inscrição`;
+}
+
+function renderizarTabelaInscritos() {
+    const container = document.getElementById("container-tabela-inscritos");
+    const badge = document.getElementById("total-inscritos-badge");
+    const filtro = document.getElementById("filtro-tabela-modalidade").value;
+
+    let listaFiltrada = atletas;
+
+    if (filtro === "PROJETOS") {
+        const esportes = ["Futsal Masculino", "Futsal Feminino", "Vôlei Misto", "Basquete", "E-Sports"];
+        listaFiltrada = atletas.filter(a => !esportes.includes(a.modalidade));
+    } else if (filtro !== "TODOS") {
+        listaFiltrada = atletas.filter(a => a.modalidade === filtro);
+    }
+
+    badge.textContent = `${atletas.length} Alunos`;
+
+    if (listaFiltrada.length === 0) {
+        container.innerHTML = `
+            <div class="text-center py-8 text-slate-500 text-xs">
+                Nenhum cadastro encontrado para esta modalidade.
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = listaFiltrada.map(a => {
+        const eProjeto = a.detalhes && a.detalhes.length > 0;
+        return `
+            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/80 flex flex-col gap-1.5 hover:border-slate-600 transition">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-slate-800 text-brand-400 font-bold text-xs flex items-center justify-center border border-slate-700">
+                            ${a.nome.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                            <span class="font-semibold text-white text-xs block leading-tight">${escapeHtml(a.nome)}</span>
+                            <span class="text-[10px] text-slate-400">${escapeHtml(a.turma)}</span>
+                        </div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-400 text-[10px] font-semibold border border-brand-500/20">
+                        ${escapeHtml(a.modalidade)}
+                    </span>
+                </div>
+                ${eProjeto ? `
+                    <div class="mt-1 p-2 rounded bg-slate-950/60 text-[11px] text-slate-300 border border-slate-800 flex flex-col gap-0.5">
+                        <span class="text-[10px] text-purple-400 font-bold uppercase"><i class="fa-solid fa-file-text mr-1"></i>Descrição do Projeto (Coluna F):</span>
+                        <p class="text-slate-300 italic">"${escapeHtml(a.detalhes)}"</p>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }).join('');
+}
+
+function renderizarGridMVP() {
+    const grid = document.getElementById("grid-mvp-candidatos");
+    
+    // Filtra apenas inscritos em Futsal Masculino
+    const candidatos = atletas.filter(a => a.modalidade === "Futsal Masculino");
+
+    if (candidatos.length === 0) {
+        grid.innerHTML = `
+            <div class="col-span-full text-center py-10 bg-slate-900/50 rounded-xl border border-slate-700 text-slate-400 text-sm">
+                Nenhum jogador inscrito em <strong>Futsal Masculino</strong> até o momento.
+            </div>
+        `;
+        return;
+    }
+
+    grid.innerHTML = candidatos.map(c => `
+        <div class="bg-slate-900/90 rounded-xl border border-slate-700 p-5 flex flex-col justify-between items-center text-center relative group hover:border-amber-500/50 transition duration-300 shadow-lg">
+            <div class="w-16 h-16 rounded-full bg-slate-800 border-2 border-amber-400 flex items-center justify-center text-amber-400 text-xl font-bold mb-3 shadow-inner">
+                ${c.nome.charAt(0).toUpperCase()}
+            </div>
+            
+            <h4 class="font-bold text-white text-base">${escapeHtml(c.nome)}</h4>
+            <span class="text-xs text-slate-400 font-medium mb-3">${escapeHtml(c.turma)}</span>
+
+            <div class="w-full bg-slate-950/80 rounded-lg py-2 border border-slate-800 mb-4">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block">Total de Votos</span>
+                <span class="text-xl font-extrabold text-amber-400" id="votos-count-${c.id}">${c.votos || 0}</span>
+            </div>
+
+            <button onclick="votarMVP('${c.id}')" class="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-lg transition transform active:scale-95 flex items-center justify-center gap-1.5 shadow-md">
+                <i class="fa-solid fa-thumbs-up"></i> Votar no MVP
+            </button>
+        </div>
+    `).join('');
+}
+
+async function votarMVP(atletaId) {
+    const atleta = atletas.find(a => String(a.id) === String(atletaId));
+    if (!atleta) return;
+
+    atleta.votos = (Number(atleta.votos) || 0) + 1;
+    salvarLocalmente();
+    
+    // Atualiza contador na tela imediatamente
+    const counterEl = document.getElementById(`votos-count-${atletaId}`);
+    if (counterEl) {
+        counterEl.textContent = atleta.votos;
+    }
+
+    showToast(`Voto registrado para ${atleta.nome}!`, "success");
+
+    // Envia voto para a Planilha Google (Coluna E) usando text/plain para evitar bloqueio CORS
+    if (webAppUrl && webAppUrl.startsWith("http")) {
+        try {
+            await fetch(webAppUrl, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
+                body: JSON.stringify({
+                    action: "votar",
+                    id: String(atletaId)
+                })
+            });
+        } catch (e) {
+            console.error("Erro ao sincronizar voto com o Google Sheets:", e);
+        }
+    }
+}
+
+function showToast(message, type = "info") {
+    const container = document.getElementById("toast-container");
+    const toast = document.createElement("div");
+    
+    let bg = "bg-slate-800 border-slate-700 text-slate-200";
+    let icon = "fa-circle-info text-brand-400";
+
+    if (type === "success") {
+        bg = "bg-brand-900/90 border-brand-500/50 text-emerald-200";
+        icon = "fa-circle-check text-emerald-400";
+    } else if (type === "error") {
+        bg = "bg-red-950/90 border-red-500/50 text-red-200";
+        icon = "fa-triangle-exclamation text-red-400";
+    }
+
+    toast.className = `pointer-events-auto px-4 py-3 rounded-xl border ${bg} shadow-2xl flex items-center gap-3 text-xs font-semibold transform transition duration-300 translate-y-2 opacity-0`;
+    toast.innerHTML = `<i class="fa-solid ${icon} text-base"></i> <span>${escapeHtml(message)}</span>`;
+
+    container.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        toast.classList.remove("translate-y-2", "opacity-0");
+    });
+
+    setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-2");
+        setTimeout(() => toast.remove(), 300);
+    }, 3500);
+}
+
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+</script>
+
 </body>
 </html>
-
